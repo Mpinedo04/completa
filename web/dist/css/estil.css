@@ -99,7 +99,17 @@ address { font-style: normal; }
   display: inline-flex; align-items: center; justify-content: center; gap: .5em; min-height: 52px;
   border: 2px solid var(--tinta); border-radius: 999px; font-weight: 700; color: var(--tinta); text-decoration: none;
 }
-.idioma { align-self: center; padding: 10px; font-weight: 600; color: var(--suau); }
+/* selector d'idioma CA | ES: sempre visible a la capçalera, també al mòbil */
+.idiomes { display: inline-flex; gap: 2px; padding: 3px; margin-left: auto; border: 1.5px solid var(--linia); border-radius: 999px; background: var(--blanc); }
+.idioma-opcio {
+  display: inline-flex; align-items: center; justify-content: center; min-width: 42px; height: 36px; padding: 0 10px;
+  border-radius: 999px; font-size: .85rem; font-weight: 700; letter-spacing: .04em; color: var(--suau); text-decoration: none;
+}
+a.idioma-opcio:hover { color: var(--tinta); background: var(--crema); }
+.idioma-opcio.actiu { background: var(--tinta); color: #fff; }
+.idiomes-llarg { margin-left: 0; }
+.idiomes-llarg .idioma-opcio { letter-spacing: 0; font-size: .92rem; padding: 0 14px; }
+.peu-titol-idioma { margin-top: 24px; }
 body.menu-obert { overflow: hidden; }
 
 /* ---------- hero ---------- */
@@ -389,7 +399,9 @@ body.menu-obert { overflow: hidden; }
   .menu-accions .btn { min-height: 44px; font-size: .95rem; }
   .telefon-cap { border: 0; min-height: 0; font-size: 1.05rem; }
   .telefon-cap .icon { color: var(--vermell); }
-  .idioma { padding: 6px; font-size: .9rem; }
+  /* escriptori: logo · menú · selector d'idioma */
+  .menu { order: 2; margin-left: auto; }
+  .capcalera-dins > .idiomes { order: 3; margin-left: 0; }
   .hero-dins { padding-top: 110px; padding-bottom: 150px; }
   .hero::before { background: linear-gradient(90deg, rgb(20 18 17 / .85) 0%, rgb(20 18 17 / .55) 55%, rgb(20 18 17 / .2) 100%); }
   .hero-text { font-size: 1.25rem; }

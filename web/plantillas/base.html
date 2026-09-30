@@ -1,10 +1,23 @@
 {% from 'macros.html' import icon %}
+{% macro selector_idioma(llarg=false) %}
+<div class="idiomes{% if llarg %} idiomes-llarg{% endif %}" role="group" aria-label="{{ ui.idioma }}">
+  {% for l in ['ca', 'es'] %}
+  {% set nom = t.nom_idioma if l == lang else idioma_otro %}
+  {% set text %}{% if llarg %}{{ nom }}{% else %}<span aria-hidden="true">{{ l | upper }}</span><span class="sr">{{ nom }}</span>{% endif %}{% endset %}
+  {% if l == lang %}
+  <span class="idioma-opcio actiu" aria-current="true" lang="{{ l }}" title="{{ nom }}">{{ text }}</span>
+  {% else %}
+  <a class="idioma-opcio" href="{{ url_otro }}" hreflang="{{ l }}" lang="{{ l }}" title="{{ nom }}">{{ text }}</a>
+  {% endif %}
+  {% endfor %}
+</div>
+{% endmacro %}
 <!doctype html>
 <html lang="{{ lang }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% if boceto %}[Esbós] {% endif %}{% block title %}{{ info.title }}{% endblock %}</title>
+  <title>{% if boceto %}[{{ ui.esbos_titol }}] {% endif %}{% block title %}{{ info.title }}{% endblock %}</title>
   {% if info.description is defined %}<meta name="description" content="{{ info.description }}">{% endif %}
   {% if indexable %}
   <link rel="canonical" href="{{ canonical }}">
@@ -42,6 +55,7 @@
       <a class="logo" href="{{ url('inici') }}" aria-label="{{ comun.empresa }} – {{ ui.inici }}">
         <img src="{{ asset('img/logo.png') }}" alt="{{ comun.empresa }}" width="350" height="85">
       </a>
+      {{ selector_idioma() }}
       <button class="menu-boto" type="button" aria-expanded="false" aria-controls="menu" data-menu-boto>
         <span class="obre">{{ icon('menu', 24) }}</span><span class="tanca">{{ icon('close', 24) }}</span>
         <span class="sr">{{ ui.menu }}</span>
@@ -57,7 +71,6 @@
         <div class="menu-accions">
           <a class="telefon-cap" href="tel:{{ comun.telefon_link }}">{{ icon('phone', 18) }}<span>{{ comun.telefon }}</span></a>
           <a class="btn btn-primari btn-petit" href="{{ url('pressupost') }}">{{ ui.pressupost }}</a>
-          <a class="idioma" href="{{ url_otro }}" hreflang="{{ lang_otro }}" lang="{{ lang_otro }}">{{ idioma_otro }}</a>
         </div>
       </nav>
     </div>
@@ -95,8 +108,9 @@
           <li><a href="{{ url('experiencia') }}">{{ ui.experiencia }}</a></li>
           <li><a href="{{ url('pressupost') }}">{{ ui.pressupost }}</a></li>
           <li><a href="{{ url('contacte') }}">{{ ui.contacte }}</a></li>
-          <li><a href="{{ url_otro }}" hreflang="{{ lang_otro }}" lang="{{ lang_otro }}">{{ idioma_otro }}</a></li>
         </ul>
+        <h2 class="peu-titol peu-titol-idioma">{{ ui.idioma }}</h2>
+        {{ selector_idioma(llarg=true) }}
       </div>
     </div>
     <div class="contenidor peu-legal">

@@ -1,7 +1,7 @@
 """Genera la web estática de Electricitat Samsó.
 
     python web/build.py            -> web/dist/          web completa (se sube tal cual al hosting)
-    python web/build.py --boceto   -> web/dist-boceto/   esbós de propuesta: 4 páginas en catalán, marcado
+    python web/build.py --boceto   -> web/dist-boceto/   esbós de propuesta: 4 páginas en catalán y castellano, marcado
                                                          como propuesta, sin PHP, abre con doble clic
                                                          + web/esbos-electricitat-samso.zip para enviar
 
@@ -13,6 +13,7 @@ import json
 import posixpath
 import shutil
 import sys
+import zipfile
 from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader, StrictUndefined
@@ -26,7 +27,7 @@ PREFIJO = {"ca": "", "es": "cas/"}
 
 BOCETO = "--boceto" in sys.argv
 DIST = WEB / ("dist-boceto" if BOCETO else "dist")
-IDIOMAS_BUILD = ["ca"] if BOCETO else ["ca", "es"]
+IDIOMAS_BUILD = ["ca", "es"]
 # páginas que entran en el esbós; el resto de enlaces lleva a pendent.html
 PAGINAS_BOCETO = {"inici", "servei:illuminacio", "contacte", "pressupost", "pendent"}
 
@@ -201,7 +202,7 @@ def main():
                 prefijo = "" if destino == "enviar.php" else PREFIJO[lang_destino]
                 completo = prefijo + RUTAS.get(destino, destino)
                 if BOCETO and completo not in incluidas:
-                    completo = "pendent.html"
+                    completo = PREFIJO[lang_destino] + "pendent.html"
                 if _abs:  # la 404 se sirve desde cualquier ruta: enlaces absolutos
                     return "/" + (completo[: -len("index.html")] if completo.endswith("index.html") else completo)
                 return rel(completo, _actual)
@@ -245,8 +246,14 @@ def main():
             "Proposta de disseny (no és la web oficial). Carpeta generada automàticament amb "
             "`python web/build.py --boceto` des del repositori `completa`: no s'edita a mà.\n\n"
             "Es publica a Vercel tal qual (web estàtica, sense build).\n", encoding="utf-8")
-        zip_ = shutil.make_archive(str(WEB / "esbos-electricitat-samso"), "zip", DIST)
-        total = sum(p.stat().st_size for p in DIST.rglob("*") if p.is_file())
+        # zip para enviar al cliente: sin .git ni los archivos de Vercel/GitHub
+        zip_ = WEB / "esbos-electricitat-samso.zip"
+        with zipfile.ZipFile(zip_, "w", zipfile.ZIP_DEFLATED) as z:
+            for p in sorted(DIST.rglob("*")):
+                rel_zip = p.relative_to(DIST)
+                if p.is_file() and rel_zip.parts[0] not in (".git", "vercel.json", "README.md"):
+                    z.write(p, rel_zip.as_posix())
+        total = sum(p.stat().st_size for p in DIST.rglob("*") if p.is_file() and ".git" not in p.relative_to(DIST).parts)
         print(f"\nOK esbós: {sum(1 for _ in DIST.rglob('*.html'))} páginas, {total / 1e6:.1f} MB en {DIST}\n    zip: {zip_}")
         return
 

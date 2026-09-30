@@ -15,7 +15,7 @@ python -m http.server 8080 --directory web/dist   # ver en http://localhost:8080
 En local el formulario muestra "modo demostración", porque no hay PHP.
 
 **Boceto (esbós):**
-- **Contenido:** portada, Il·luminació, contacto, solicitar servicio y una página "Disponible a la versió completa", solo en catalán.
+- **Contenido:** portada, Il·luminació, contacto, solicitar servicio y una página "Disponible a la versió completa", en catalán y castellano (10 páginas).
 - **Marcado como propuesta:** banda amarilla "no és la web oficial", `[Esbós]` en el título, `noindex` y `robots.txt` que bloquea a Google.
 - **Sin backend:** sin PHP ni `.htaccess`; el formulario siempre está en modo demostración.
 - **Se abre con doble clic** en `index.html`, sin servidor.

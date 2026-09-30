@@ -60,6 +60,8 @@
     "tornar_inici": "Torna a l'inici",
     "cookies_nota": "Aquesta web no utilitza galetes (cookies) de seguiment.",
     "esbos_banner": "Proposta de disseny (esbós) de la nova web d'Electricitat Samsó · No és la web oficial",
+    "idioma": "Idioma",
+    "esbos_titol": "Esbós",
     "esbos_inclou": "Què inclou?"
   },
   "paginas": {
@@ -145,7 +147,6 @@
       "llista": [
         "Les 8 pàgines de serveis, cadascuna amb la seva galeria de fotos",
         "La història de l'empresa, amb la línia de temps des de 1960",
-        "Tota la web també en castellà",
         "Avís legal i política de privacitat (obligatoris per llei)",
         "Formulari que envia les sol·licituds directament al vostre correu",
         "Preparada per a Google: fitxa d'empresa, mapa del lloc i redireccions de la web antiga"
