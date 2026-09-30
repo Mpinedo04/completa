@@ -1,0 +1,302 @@
+{
+  "electricitat": [
+    {
+      "foto": "_content/portfolio/electricitat/electricitat1.jpg",
+      "mini": "_content/portfolio/electricitat/electricitat1_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/electricitat/electricitat2.jpg",
+      "mini": "_content/portfolio/electricitat/electricitat2_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/electricitat/electricitat3.jpg",
+      "mini": "_content/portfolio/electricitat/electricitat3_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/electricitat/electricitat4.jpg",
+      "mini": "_content/portfolio/electricitat/electricitat4_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/electricitat/electricitat5.jpg",
+      "mini": "_content/portfolio/electricitat/electricitat5_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/electricitat/electricitat6.jpg",
+      "mini": "_content/portfolio/electricitat/electricitat6_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/electricitat/electricitat7.jpg",
+      "mini": "_content/portfolio/electricitat/electricitat7_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/electricitat/electricitat8.jpg",
+      "mini": "_content/portfolio/electricitat/electricitat8_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/electricitat/electricitat9.jpg",
+      "mini": "_content/portfolio/electricitat/electricitat9_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/electricitat/electricitat10.jpg",
+      "mini": "_content/portfolio/electricitat/electricitat10_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/electricitat/electricitat11.jpg",
+      "mini": "_content/portfolio/electricitat/electricitat11_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/electricitat/electricitat12.jpg",
+      "mini": "_content/portfolio/electricitat/electricitat12_tn.jpg"
+    }
+  ],
+  "aigua": [
+    {
+      "foto": "_content/portfolio/aigua/aigua1.jpg",
+      "mini": "_content/portfolio/aigua/aigua1_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/aigua/aigua2.jpg",
+      "mini": "_content/portfolio/aigua/aigua2_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/aigua/aigua3.jpg",
+      "mini": "_content/portfolio/aigua/aigua3_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/aigua/aigua4.jpg",
+      "mini": "_content/portfolio/aigua/aigua4_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/aigua/aigua5.jpg",
+      "mini": "_content/portfolio/aigua/aigua5_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/aigua/aigua6.jpg",
+      "mini": "_content/portfolio/aigua/aigua6_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/aigua/aigua7.jpg",
+      "mini": "_content/portfolio/aigua/aigua7_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/aigua/aigua8.jpg",
+      "mini": "_content/portfolio/aigua/aigua8_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/aigua/aigua9.jpg",
+      "mini": "_content/portfolio/aigua/aigua9_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/aigua/aigua10.jpg",
+      "mini": "_content/portfolio/aigua/aigua10_tn.jpg"
+    }
+  ],
+  "liquids-gasos": [
+    {
+      "foto": "_content/portfolio/liquidsgasos/liquids_gasos1.jpg",
+      "mini": "_content/portfolio/liquidsgasos/liquids_gasos1_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/liquidsgasos/liquids_gasos2.jpg",
+      "mini": "_content/portfolio/liquidsgasos/liquids_gasos2_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/liquidsgasos/liquids_gasos3.jpg",
+      "mini": "_content/portfolio/liquidsgasos/liquids_gasos3_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/liquidsgasos/liquids_gasos4.jpg",
+      "mini": "_content/portfolio/liquidsgasos/liquids_gasos4_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/liquidsgasos/liquids_gasos5.jpg",
+      "mini": "_content/portfolio/liquidsgasos/liquids_gasos5_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/liquidsgasos/liquids_gasos6.jpg",
+      "mini": "_content/portfolio/liquidsgasos/liquids_gasos6_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/liquidsgasos/liquids_gasos7.jpg",
+      "mini": "_content/portfolio/liquidsgasos/liquids_gasos7_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/liquidsgasos/liquids_gasos8.jpg",
+      "mini": "_content/portfolio/liquidsgasos/liquids_gasos8_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/liquidsgasos/liquids_gasos9.jpg",
+      "mini": "_content/portfolio/liquidsgasos/liquids_gasos9_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/liquidsgasos/liquids_gasos10.jpg",
+      "mini": "_content/portfolio/liquidsgasos/liquids_gasos10_tn.jpg"
+    }
+  ],
+  "refrigeracio-climatitzacio": [
+    {
+      "foto": "_content/portfolio/climatitzacio/climatitzacio1.jpg",
+      "mini": "_content/portfolio/climatitzacio/climatitzacio1_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/climatitzacio/climatitzacio2.jpg",
+      "mini": "_content/portfolio/climatitzacio/climatitzacio2_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/climatitzacio/climatitzacio3.jpg",
+      "mini": "_content/portfolio/climatitzacio/climatitzacio3_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/climatitzacio/climatitzacio4.jpg",
+      "mini": "_content/portfolio/climatitzacio/climatitzacio4_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/climatitzacio/climatitzacio5.jpg",
+      "mini": "_content/portfolio/climatitzacio/climatitzacio5_tn.jpg"
+    }
+  ],
+  "energies-renovables": [
+    {
+      "foto": "_content/portfolio/energies/energies1.jpg",
+      "mini": "_content/portfolio/energies/energies1_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/energies/energies2.jpg",
+      "mini": "_content/portfolio/energies/energies2_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/energies/energies3.jpg",
+      "mini": "_content/portfolio/energies/energies3_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/energies/energies4.jpg",
+      "mini": "_content/portfolio/energies/energies4_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/energies/energies5.jpg",
+      "mini": "_content/portfolio/energies/energies5_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/energies/energies6.jpg",
+      "mini": "_content/portfolio/energies/energies6_tn.jpg"
+    }
+  ],
+  "illuminacio": [
+    {
+      "foto": "_content/portfolio/illuminacio/illuminacio1.jpg",
+      "mini": "_content/portfolio/illuminacio/illuminacio1_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/illuminacio/illuminacio2.jpg",
+      "mini": "_content/portfolio/illuminacio/illuminacio2_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/illuminacio/illuminacio3.jpg",
+      "mini": "_content/portfolio/illuminacio/illuminacio3_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/illuminacio/illuminacio4.jpg",
+      "mini": "_content/portfolio/illuminacio/illuminacio4_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/illuminacio/illuminacio5.jpg",
+      "mini": "_content/portfolio/illuminacio/illuminacio5_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/illuminacio/illuminacio6.jpg",
+      "mini": "_content/portfolio/illuminacio/illuminacio6_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/illuminacio/illuminacio7.jpg",
+      "mini": "_content/portfolio/illuminacio/illuminacio7_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/illuminacio/illuminacio8.jpg",
+      "mini": "_content/portfolio/illuminacio/illuminacio8_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/illuminacio/illuminacio9.jpg",
+      "mini": "_content/portfolio/illuminacio/illuminacio9_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/illuminacio/illuminacio10.jpg",
+      "mini": "_content/portfolio/illuminacio/illuminacio10_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/illuminacio/illuminacio11.jpg",
+      "mini": "_content/portfolio/illuminacio/illuminacio11_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/illuminacio/illuminacio12.jpg",
+      "mini": "_content/portfolio/illuminacio/illuminacio12_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/illuminacio/illuminacio13.jpg",
+      "mini": "_content/portfolio/illuminacio/illuminacio13_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/illuminacio/illuminacio14.jpg",
+      "mini": "_content/portfolio/illuminacio/illuminacio14_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/illuminacio/illuminacio15.jpg",
+      "mini": "_content/portfolio/illuminacio/illuminacio15_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/illuminacio/illuminacio16.jpg",
+      "mini": "_content/portfolio/illuminacio/illuminacio16_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/illuminacio/illuminacio17.jpg",
+      "mini": "_content/portfolio/illuminacio/illuminacio17_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/illuminacio/illuminacio18.jpg",
+      "mini": "_content/portfolio/illuminacio/illuminacio18_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/illuminacio/illuminacio19.gif",
+      "mini": "_content/portfolio/illuminacio/illuminacio19_tn.gif"
+    },
+    {
+      "foto": "_content/portfolio/illuminacio/illuminacio20.gif",
+      "mini": "_content/portfolio/illuminacio/illuminacio20_tn.gif"
+    },
+    {
+      "foto": "_content/portfolio/illuminacio/illuminacio21.gif",
+      "mini": "_content/portfolio/illuminacio/illuminacio21_tn.gif"
+    },
+    {
+      "foto": "_content/portfolio/illuminacio/illuminacio22.gif",
+      "mini": "_content/portfolio/illuminacio/illuminacio22_tn.gif"
+    },
+    {
+      "foto": "_content/portfolio/illuminacio/illuminacio23.gif",
+      "mini": "_content/portfolio/illuminacio/illuminacio23_tn.gif"
+    },
+    {
+      "foto": "_content/portfolio/illuminacio/illuminacio24.gif",
+      "mini": "_content/portfolio/illuminacio/illuminacio24_tn.gif"
+    },
+    {
+      "foto": "_content/portfolio/illuminacio/illuminacio25.gif",
+      "mini": "_content/portfolio/illuminacio/illuminacio25_tn.gif"
+    }
+  ],
+  "extintors": [
+    {
+      "foto": "_content/portfolio/extintors/extintors1.jpg",
+      "mini": "_content/portfolio/extintors/extintors1_tn.jpg"
+    },
+    {
+      "foto": "_content/portfolio/extintors/extintors2.jpg",
+      "mini": "_content/portfolio/extintors/extintors2_tn.jpg"
+    }
+  ],
+  "manteniment": [
+    {
+      "foto": "_content/portfolio/manteniment/1.jpg",
+      "mini": "_content/portfolio/220x140-8.jpg"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import icon, formulari %}
+{% block contingut %}
+<section class="cap-pagina">
+  <div class="contenidor">
+    <nav class="molles" aria-label="breadcrumb"><a href="{{ url('inici') }}">{{ ui.inici }}</a> / <span>{{ info.titol }}</span></nav>
+    <h1>{{ info.titol }}</h1>
+    <p class="entradeta">{{ info.text }}</p>
+  </div>
+</section>
+
+<section class="seccio">
+  <div class="contenidor amb-lateral">
+    <div class="principal">
+      {{ formulari(ui, comun, url, lang, 'servei', t.serveis) }}
+    </div>
+    <aside class="lateral">
+      <div class="caixa-contacte caixa-urgent">
+        <h2>{{ info.urgent }}</h2>
+        <a class="btn btn-primari btn-bloc" href="tel:{{ comun.telefon_link }}">{{ icon('phone', 18) }}<span>{{ comun.telefon }}</span></a>
+      </div>
+      <div class="passos">
+        <h2>{{ info.passos_titol }}</h2>
+        <ol>
+          {% for p in info.passos %}<li><strong>{{ p.titol }}</strong><span>{{ p.text }}</span></li>{% endfor %}
+        </ol>
+      </div>
+    </aside>
+  </div>
+</section>
+{% endblock %}

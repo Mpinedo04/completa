@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import icon, cta %}
+{% block contingut %}
+{% set portada = (comun.serveis | selectattr('slug', 'equalto', servei) | first).portada %}
+{% set h = img(portada, 'full') %}
+<section class="cap-pagina cap-servei">
+  <img class="cap-fons" src="{{ asset(h.src) }}" width="{{ h.w }}" height="{{ h.h }}" alt="" fetchpriority="high">
+  <div class="contenidor">
+    <nav class="molles" aria-label="breadcrumb"><a href="{{ url('inici') }}">{{ ui.inici }}</a> / <a href="{{ url('serveis') }}">{{ ui.serveis }}</a> / <span>{{ info.nom }}</span></nav>
+    <h1>{{ info.nom }}</h1>
+    <p class="entradeta">{{ info.curt }}</p>
+  </div>
+</section>
+
+<section class="seccio">
+  <div class="contenidor amb-lateral">
+    <div class="principal">
+      <p class="intro">{{ info.intro }}</p>
+      <h2>{{ ui.que_fem }}</h2>
+      <ul class="llista-check">
+        {% for item in info.llista %}<li>{{ icon('check', 20) }}<span>{{ item }}</span></li>{% endfor %}
+      </ul>
+
+      {% set fotos = galerias[servei] %}
+      {% if fotos %}
+      <h2>{{ ui.treballs }}</h2>
+      <ul class="galeria">
+        {% for f in fotos %}
+        {% set mini = img(f.foto, 'thumb') %}{% set gran = img(f.foto, 'full') %}
+        <li>
+          <a href="{{ asset(gran.src) }}" data-lightbox="{{ servei }}" data-w="{{ gran.w }}" data-h="{{ gran.h }}">
+            <img src="{{ asset(mini.src) }}" width="{{ mini.w }}" height="{{ mini.h }}" alt="{{ info.nom }} – {{ ui.foto | lower }} {{ loop.index }}" loading="lazy">
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+
+    <aside class="lateral">
+      <div class="caixa-contacte">
+        <h2>{{ ui.cta_titol }}</h2>
+        <p>{{ ui.cta_text }}</p>
+        <a class="btn btn-primari btn-bloc" href="tel:{{ comun.telefon_link }}">{{ icon('phone', 18) }}<span>{{ comun.telefon }}</span></a>
+        <a class="btn btn-contorn btn-bloc" href="{{ url('pressupost') }}">{{ ui.pressupost }}</a>
+      </div>
+      <nav class="altres-serveis" aria-label="{{ ui.altres_serveis }}">
+        <h2>{{ ui.altres_serveis }}</h2>
+        <ul>
+          {% for s in comun.serveis %}
+          <li><a href="{{ url('serveis/' ~ s.slug ~ '.html') }}"{% if s.slug == servei %} aria-current="page"{% endif %}>{{ t.serveis[s.slug].nom }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </aside>
+  </div>
+</section>
+{{ cta(ui, comun, url) }}
+{% endblock %}

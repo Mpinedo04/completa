@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import cta %}
+{% block contingut %}
+<section class="cap-pagina">
+  <div class="contenidor">
+    <nav class="molles" aria-label="breadcrumb"><a href="{{ url('inici') }}">{{ ui.inici }}</a> / <span>{{ info.titol }}</span></nav>
+    <h1>{{ info.titol }}</h1>
+    <p class="entradeta">{{ info.text }}</p>
+  </div>
+</section>
+
+<section class="seccio">
+  <div class="contenidor">
+    <h2>{{ info.timeline_titol }}</h2>
+    <ol class="linia-temps">
+      {% for f in t.timeline %}
+      <li><span class="lt-any">{{ f.any }}</span><p>{{ f.text }}</p></li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="seccio seccio-crema">
+  <div class="contenidor amb-lateral">
+    <article class="principal relat">
+      <h2>{{ info.relat_titol }}</h2>
+      {% for par in t.historia %}<p>{{ par }}</p>{% endfor %}
+      <blockquote class="cita">
+        <p>«{{ t.paginas.inici.historia_cita }}»</p>
+        <cite>{{ t.paginas.inici.historia_autor }}</cite>
+      </blockquote>
+    </article>
+    <aside class="lateral anuncis">
+      <h2>{{ info.anuncis_titol }}</h2>
+      {% for a in comun.anuncis %}
+      {% set an = img(a, 'raw') %}
+      <figure><img src="{{ asset(an.src) }}" width="{{ an.w }}" height="{{ an.h }}" alt="{{ info.anuncis_alt[loop.index0] }}" loading="lazy"></figure>
+      {% endfor %}
+    </aside>
+  </div>
+</section>
+{{ cta(ui, comun, url) }}
+{% endblock %}

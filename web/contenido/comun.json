@@ -1,0 +1,43 @@
+{
+  "site": "https://electricitatsamso.com",
+  "empresa": "Electricitat Samsó",
+  "telefon": "93 891 09 11",
+  "telefon_link": "+34938910911",
+  "whatsapp": null,
+  "email": "electricitat@electricitatsamso.com",
+  "horari": null,
+  "adreca": {
+    "carrer": "Mestre Antoni Torelló, 5",
+    "cp": "08770",
+    "poblacio": "Sant Sadurní d'Anoia",
+    "provincia": "Barcelona"
+  },
+  "geo": { "lat": 41.425397, "lng": 1.782125 },
+  "fundacio": 1960,
+  "hero": "_content/index/slider/940x350-4.jpg",
+  "serveis": [
+    { "slug": "electricitat", "portada": "_content/portfolio/electricitat/electricitat1.jpg" },
+    { "slug": "aigua", "portada": "_content/portfolio/aigua/aigua1.jpg" },
+    { "slug": "liquids-gasos", "portada": "_content/portfolio/liquidsgasos/liquids_gasos1.jpg" },
+    { "slug": "refrigeracio-climatitzacio", "portada": "_content/portfolio/climatitzacio/climatitzacio4.jpg" },
+    { "slug": "energies-renovables", "portada": "_content/portfolio/energies/energies1.jpg" },
+    { "slug": "illuminacio", "portada": "_content/portfolio/illuminacio/illuminacio17.jpg" },
+    { "slug": "extintors", "portada": "_content/portfolio/extintors/extintors2.jpg" },
+    { "slug": "manteniment", "portada": "_content/portfolio/manteniment/1.jpg" }
+  ],
+  "destacats": [
+    "_content/portfolio/illuminacio/illuminacio14.jpg",
+    "_content/portfolio/energies/energies2.jpg",
+    "_content/portfolio/electricitat/electricitat2.jpg",
+    "_content/portfolio/illuminacio/illuminacio4.jpg",
+    "_content/portfolio/aigua/aigua7.jpg",
+    "_content/portfolio/illuminacio/illuminacio23.gif"
+  ],
+  "anuncis": ["_content/services/340x275.jpg", "_content/services/340x275_2.jpg"],
+  "associacions": [
+    { "nom": "FERCA", "img": "_content/index/clients/1.jpg" },
+    { "nom": "APEI", "img": "_content/index/clients/2.jpg" },
+    { "nom": "PIMEC", "img": "_content/index/clients/3.jpg" },
+    { "nom": "FENIE", "img": "_content/index/clients/4.jpg" }
+  ]
+}

@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import icon, cta %}
+{% set p = t.paginas.inici %}
+{% block cap %}
+  {% set h = img(comun.hero, 'hero') %}
+  <link rel="preload" as="image" href="{{ asset(h.src) }}" fetchpriority="high">
+{% endblock %}
+{% block contingut %}
+{% set h = img(comun.hero, 'hero') %}
+<section class="hero">
+  <img class="hero-fons" src="{{ asset(h.src) }}" alt="" width="{{ h.w }}" height="{{ h.h }}" fetchpriority="high">
+  <div class="contenidor hero-dins">
+    <p class="etiqueta">{{ p.hero_etiqueta }}</p>
+    <h1>{{ p.hero_titol }}</h1>
+    <p class="hero-text">{{ p.hero_text }}</p>
+    <div class="botons">
+      <a class="btn btn-primari btn-gran" href="tel:{{ comun.telefon_link }}">{{ icon('phone', 20) }}<span>{{ ui.trucar_llarg }} · {{ comun.telefon }}</span></a>
+      <a class="btn btn-contorn-blanc btn-gran" href="{{ url('pressupost') }}">{{ ui.pressupost }}</a>
+    </div>
+  </div>
+</section>
+
+<section class="xifres" aria-label="{{ comun.empresa }}">
+  <div class="contenidor">
+    <ul class="xifres-llista">
+      {% for x in p.xifres %}
+      <li><strong>{{ x.num }}</strong><span>{{ x.text }}</span></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="seccio">
+  <div class="contenidor">
+    <div class="seccio-cap">
+      <h2>{{ p.serveis_titol }}</h2>
+      <p>{{ p.serveis_text }}</p>
+    </div>
+    {% include 'targetes-serveis.html' %}
+  </div>
+</section>
+
+<section class="seccio seccio-crema">
+  <div class="contenidor">
+    <div class="seccio-cap">
+      <h2>{{ p.perque_titol }}</h2>
+    </div>
+    <ul class="avantatges">
+      {% set icones = ['users', 'chat', 'building', 'file'] %}
+      {% for a in p.perque %}
+      <li>
+        <span class="avantatge-icona">{{ icon(icones[loop.index0], 26) }}</span>
+        <h3>{{ a.titol }}</h3>
+        <p>{{ a.text }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="seccio">
+  <div class="contenidor historia-teaser">
+    {% set an = img(comun.anuncis[1], 'raw') %}
+    <figure class="historia-img">
+      <img src="{{ asset(an.src) }}" width="{{ an.w }}" height="{{ an.h }}" alt="{{ t.paginas.experiencia.anuncis_alt[1] }}" loading="lazy">
+    </figure>
+    <div>
+      <p class="etiqueta etiqueta-vermella">1960 – {{ any_actual }}</p>
+      <h2>{{ p.historia_titol }}</h2>
+      <p>{{ p.historia_text }}</p>
+      <blockquote class="cita">
+        <p>«{{ p.historia_cita }}»</p>
+        <cite>{{ p.historia_autor }}</cite>
+      </blockquote>
+      <a class="enllac-fletxa" href="{{ url('experiencia') }}">{{ p.historia_boto }} {{ icon('arrow', 18) }}</a>
+    </div>
+  </div>
+</section>
+
+<section class="seccio seccio-fosca">
+  <div class="contenidor">
+    <div class="seccio-cap">
+      <h2>{{ p.treballs_titol }}</h2>
+      <p>{{ p.treballs_text }}</p>
+    </div>
+    <ul class="galeria galeria-destacats">
+      {% for f in comun.destacats %}
+      {% set mini = img(f, 'thumb') %}{% set gran = img(f, 'full') %}
+      <li>
+        <a href="{{ asset(gran.src) }}" data-lightbox="destacats" data-w="{{ gran.w }}" data-h="{{ gran.h }}">
+          <img src="{{ asset(mini.src) }}" width="{{ mini.w }}" height="{{ mini.h }}" alt="{{ ui.treballs }} {{ loop.index }}" loading="lazy">
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+    <p class="centrat"><a class="btn btn-contorn-blanc" href="{{ url('serveis') }}">{{ ui.tots_serveis }}</a></p>
+  </div>
+</section>
+
+<section class="seccio seccio-petita">
+  <div class="contenidor associacions">
+    <h2 class="associacions-titol">{{ ui.membres }}</h2>
+    <ul>
+      {% for a in comun.associacions %}
+      {% set l = img(a.img, 'raw') %}
+      <li><img src="{{ asset(l.src) }}" width="{{ l.w }}" height="{{ l.h }}" alt="{{ a.nom }}" loading="lazy"></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+{{ cta(ui, comun, url) }}
+{% endblock %}

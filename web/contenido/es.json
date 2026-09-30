@@ -1,0 +1,250 @@
+{
+  "lang": "es",
+  "locale": "es_ES",
+  "nom_idioma": "Español",
+  "ui": {
+    "saltar": "Saltar al contenido",
+    "menu": "Menú",
+    "tancar": "Cerrar",
+    "inici": "Inicio",
+    "experiencia": "Experiencia",
+    "serveis": "Servicios",
+    "contacte": "Contacto",
+    "pressupost": "Pide presupuesto",
+    "pressupost_curt": "Presupuesto",
+    "trucar": "Llama",
+    "trucar_llarg": "Llámanos",
+    "whatsapp": "WhatsApp",
+    "mes_info": "Más información",
+    "tots_serveis": "Todos los servicios",
+    "altres_serveis": "Otros servicios",
+    "treballs": "Trabajos realizados",
+    "que_fem": "Qué hacemos",
+    "adreca": "Dirección",
+    "telefon": "Teléfono",
+    "email": "Correo electrónico",
+    "horari": "Horario",
+    "com_arribar": "Cómo llegar",
+    "obrir_mapa": "Abrir en Google Maps",
+    "mapa_titol": "Mapa de la ubicación de Electricitat Samsó",
+    "avis_legal": "Aviso legal",
+    "privacitat": "Política de privacidad",
+    "drets": "Todos los derechos reservados.",
+    "seccions": "Secciones",
+    "membres": "Miembros de",
+    "foto": "Foto",
+    "de": "de",
+    "anterior": "Anterior",
+    "seguent": "Siguiente",
+    "ampliar": "Ampliar la imagen",
+    "cta_titol": "¿Tienes una avería o necesitas un presupuesto?",
+    "cta_text": "Llámanos o cuéntanos qué necesitas y te responderemos muy pronto. Sin compromiso.",
+    "form_nom": "Nombre y apellidos",
+    "form_telefon": "Teléfono",
+    "form_email": "Correo electrónico",
+    "form_servei": "Servicio",
+    "form_servei_tria": "Elige un servicio…",
+    "form_servei_altre": "Otros / no lo sé",
+    "form_poblacio": "Población",
+    "form_data": "Día preferido para la visita",
+    "form_missatge": "Mensaje",
+    "form_missatge_ph": "Cuéntanos brevemente qué necesitas o qué avería tienes.",
+    "form_rgpd": "He leído y acepto la <a href=\"{privacitat}\">política de privacidad</a>.",
+    "form_enviar": "Enviar solicitud",
+    "form_enviar_contacte": "Enviar mensaje",
+    "form_obligatori": "Campos obligatorios",
+    "form_enviant": "Enviando…",
+    "form_ok": "¡Gracias! Hemos recibido tu mensaje y te responderemos muy pronto.",
+    "form_error": "No se ha podido enviar. Vuelve a intentarlo o llámanos al",
+    "form_demo": "Modo demostración: el formulario se activará cuando la web esté publicada en el servidor.",
+    "tornar_inici": "Volver al inicio",
+    "cookies_nota": "Esta web no utiliza cookies de seguimiento.",
+    "esbos_banner": "Propuesta de diseño (boceto) de la nueva web de Electricitat Samsó · No es la web oficial",
+    "esbos_inclou": "¿Qué incluye?"
+  },
+  "paginas": {
+    "inici": {
+      "title": "Electricitat Samsó · Electricistas en el Penedès desde 1960",
+      "description": "Instalaciones de electricidad, agua, gas, climatización, energía solar e iluminación en Sant Sadurní d'Anoia y todo el Penedès. Empresa familiar desde 1960. Tel. 93 891 09 11.",
+      "hero_etiqueta": "Sant Sadurní d'Anoia · Desde 1960",
+      "hero_titol": "Electricidad, agua y climatización en el Penedès",
+      "hero_text": "Empresa familiar con {anys} años de experiencia. Trabajamos para particulares, comunidades de vecinos y empresas de todo el Penedès.",
+      "xifres": [
+        { "num": "1960", "text": "Año de fundación" },
+        { "num": "{anys}", "text": "Años de experiencia" },
+        { "num": "8", "text": "Especialidades" },
+        { "num": "2", "text": "Generaciones al frente" }
+      ],
+      "serveis_titol": "Nuestros servicios",
+      "serveis_text": "Desde una avería en casa hasta la instalación completa de una bodega o una nave industrial.",
+      "perque_titol": "Por qué Electricitat Samsó",
+      "perque": [
+        { "titol": "Empresa familiar", "text": "Fundada por Pere Samsó en 1960. Hoy la continúan Marcel y Sara, la segunda generación." },
+        { "titol": "Trato directo", "text": "Hablas directamente con quien hace el trabajo. Un servicio cercano, personalizado y de calidad." },
+        { "titol": "Particulares y empresas", "text": "Viviendas, comunidades de vecinos, oficinas, bodegas y naves industriales." },
+        { "titol": "Trámites incluidos", "text": "Nos ocupamos de las legalizaciones y de las memorias técnicas para que no tengas que preocuparte de nada." }
+      ],
+      "historia_titol": "Más de seis décadas al servicio del Penedès",
+      "historia_text": "En 1960 Pere Samsó empezó bobinando motores en Sant Sadurní. Desde entonces hemos vivido la llegada de la automatización, el cambio de voltaje y las energías renovables, siempre con el mismo compromiso.",
+      "historia_cita": "Seguimos apostando por el trato directo y el servicio de calidad tanto a empresas como a particulares.",
+      "historia_autor": "Pere Samsó, fundador",
+      "historia_boto": "Conoce nuestra historia",
+      "treballs_titol": "Algunos de nuestros trabajos",
+      "treballs_text": "Instalaciones realizadas para bodegas, empresas y particulares de la comarca."
+    },
+    "serveis": {
+      "title": "Servicios · Electricitat Samsó",
+      "description": "Electricidad, agua, líquidos y gases, refrigeración y climatización, energías renovables, iluminación, extintores y mantenimiento en el Penedès.",
+      "titol": "Servicios",
+      "text": "En Electricitat Samsó somos especialistas en electricidad, agua, refrigeración y climatización, líquidos y gases, energías renovables, iluminación, extintores y mantenimiento. Trabajamos para particulares y empresas de todo el Penedès."
+    },
+    "experiencia": {
+      "title": "Nuestra historia · Electricitat Samsó, desde 1960",
+      "description": "Electricitat Samsó nace en 1960 en Sant Sadurní d'Anoia. Más de seis décadas de experiencia y dos generaciones al servicio del Penedès.",
+      "titol": "Nuestra historia",
+      "text": "Una empresa familiar de Sant Sadurní d'Anoia que lleva {anys} años realizando instalaciones para particulares y empresas.",
+      "timeline_titol": "Momentos clave",
+      "relat_titol": "En palabras de Pere Samsó",
+      "anuncis_titol": "Anuncios de época",
+      "anuncis_alt": ["Anuncio antiguo: Rebobinado de motores, instalaciones eléctricas, material eléctrico. Samsó, Sant Sadurní de Noya", "Anuncio antiguo de Electricitat Samsó: rebobinado de motores, automáticos, instalaciones industriales y domésticas"]
+    },
+    "contacte": {
+      "title": "Contacto · Electricitat Samsó, Sant Sadurní d'Anoia",
+      "description": "Encuéntranos en la calle Mestre Antoni Torelló, 5 de Sant Sadurní d'Anoia. Teléfono 93 891 09 11. Escríbenos y te responderemos muy pronto.",
+      "titol": "Contacto",
+      "text": "Llámanos, escríbenos o ven a vernos. Te responderemos muy pronto.",
+      "form_titol": "Escríbenos"
+    },
+    "pressupost": {
+      "title": "Solicita un servicio o presupuesto · Electricitat Samsó",
+      "description": "¿Tienes una avería o necesitas una instalación? Rellena el formulario, indica el día que te va bien y te llamaremos. Sin compromiso.",
+      "titol": "Solicita un servicio",
+      "text": "Si tienes una avería o quieres pedir un presupuesto, rellena el formulario e indica el día que mejor te va para la visita. Te llamaremos para confirmarlo.",
+      "urgent": "¿Es urgente? Llámanos directamente al",
+      "passos_titol": "Cómo funciona",
+      "passos": [
+        { "titol": "Cuéntanos qué necesitas", "text": "Rellena el formulario o llámanos." },
+        { "titol": "Te llamamos", "text": "Confirmamos el día y la hora de la visita." },
+        { "titol": "Visita y presupuesto", "text": "Revisamos la instalación y te damos un presupuesto sin compromiso." }
+      ]
+    },
+    "gracies": {
+      "title": "Mensaje enviado · Electricitat Samsó",
+      "titol": "¡Gracias!",
+      "text": "Hemos recibido tu mensaje. Te responderemos lo antes posible."
+    },
+    "error404": {
+      "title": "Página no encontrada · Electricitat Samsó",
+      "titol": "Esta página no existe",
+      "text": "Quizá el enlace es antiguo o hay un error en la dirección. Puedes volver al inicio o ver nuestros servicios."
+    },
+    "pendent": {
+      "title": "Versión completa · Electricitat Samsó",
+      "titol": "Disponible en la versión completa",
+      "text": "Este boceto muestra el diseño de la portada, de un servicio (Iluminación), del contacto y de la solicitud de servicio. La versión completa ya está preparada e incluye:",
+      "llista": [
+        "Las 8 páginas de servicios, cada una con su galería de fotos",
+        "La historia de la empresa, con la línea de tiempo desde 1960",
+        "Toda la web también en catalán",
+        "Aviso legal y política de privacidad (obligatorios por ley)",
+        "Formulario que envía las solicitudes directamente a vuestro correo",
+        "Preparada para Google: ficha de empresa, mapa del sitio y redirecciones de la web antigua"
+      ]
+    },
+    "avis-legal": {
+      "title": "Aviso legal · Electricitat Samsó",
+      "titol": "Aviso legal"
+    },
+    "privacitat": {
+      "title": "Política de privacidad · Electricitat Samsó",
+      "titol": "Política de privacidad"
+    }
+  },
+  "serveis": {
+    "electricitat": {
+      "nom": "Electricidad",
+      "curt": "Instalaciones eléctricas domésticas e industriales, cuadros y automatización.",
+      "intro": "Realizamos todo tipo de instalaciones eléctricas, tanto a nivel doméstico como industrial. Desde la reforma de una vivienda hasta el cuadro eléctrico de una nave o una bodega, nos encargamos de la instalación y de su legalización.",
+      "llista": ["Instalaciones eléctricas nuevas y reformas", "Canalizaciones eléctricas y cableado", "Armarios y cuadros eléctricos para empresas", "Automatización de maquinaria y procesos", "Redes de datos: cableado RJ45 e informático", "Gestión y presentación de legalizaciones eléctricas ante ECA"],
+      "title": "Electricista en el Penedès · Instalaciones eléctricas · Electricitat Samsó",
+      "description": "Instalaciones eléctricas domésticas e industriales en Sant Sadurní d'Anoia y el Penedès: cuadros eléctricos, automatización, cableado RJ45 y legalizaciones."
+    },
+    "aigua": {
+      "nom": "Agua",
+      "curt": "Distribución de agua, grupos de presión, descalcificadores y calefacción.",
+      "intro": "Proyectamos y realizamos instalaciones de distribución de agua para viviendas, empresas e industria. También instalamos sistemas de tratamiento de agua y calefacción de gas y de gasóleo.",
+      "llista": ["Instalaciones de distribución de agua", "Montantes de agua y grupos de presión", "Tratamiento de agua: descalcificadores y ósmosis", "Cambios de baterías de contadores", "Calefacción de gas y de gasóleo", "Confección y tramitación de memorias técnicas"],
+      "title": "Fontanero en el Penedès · Instalaciones de agua · Electricitat Samsó",
+      "description": "Instalaciones de agua, grupos de presión, descalcificadores, ósmosis y calefacción para viviendas y empresas en Sant Sadurní d'Anoia y el Penedès."
+    },
+    "liquids-gasos": {
+      "nom": "Líquidos y gases",
+      "curt": "Instalaciones de gas, aire comprimido y tubería inoxidable.",
+      "intro": "Realizamos instalaciones de gas para particulares y empresas, y tuberías industriales para líquidos y aire comprimido, con todas las válvulas y elementos necesarios. Te proponemos la mejor solución para tu hogar o empresa.",
+      "llista": ["Instalaciones de gas para viviendas y empresas", "Tuberías de gas natural para acometidas de viviendas y fábricas", "Tubería de acero inoxidable para maquinaria de presión", "Redes de aire comprimido", "Válvulas y elementos de regulación"],
+      "title": "Instalaciones de gas y aire comprimido en el Penedès · Electricitat Samsó",
+      "description": "Instalaciones de gas, tubería de acero inoxidable y aire comprimido para particulares, bodegas e industria en el Penedès."
+    },
+    "refrigeracio-climatitzacio": {
+      "nom": "Refrigeración y climatización",
+      "curt": "Aire acondicionado y climatización para viviendas, oficinas y naves.",
+      "intro": "Instalamos equipos de aire acondicionado, refrigeración y climatización a nivel doméstico e industrial: viviendas, oficinas, locales y naves industriales.",
+      "llista": ["Aire acondicionado para viviendas", "Climatización de oficinas y locales", "Refrigeración y climatización de naves industriales", "Mantenimiento y reparación de equipos"],
+      "title": "Aire acondicionado y climatización en el Penedès · Electricitat Samsó",
+      "description": "Instalación y mantenimiento de aire acondicionado, refrigeración y climatización para viviendas, oficinas y naves industriales en el Penedès."
+    },
+    "energies-renovables": {
+      "nom": "Energías renovables",
+      "curt": "Placas fotovoltaicas y solares para particulares y empresas.",
+      "intro": "Instalamos placas fotovoltaicas y placas solares tanto para particulares como para empresas, para que aproveches la energía del sol y reduzcas la factura.",
+      "llista": ["Placas solares fotovoltaicas", "Placas solares térmicas", "Instalaciones para viviendas", "Instalaciones para empresas y naves", "Asesoramiento para elegir la instalación adecuada"],
+      "title": "Placas solares y fotovoltaicas en el Penedès · Electricitat Samsó",
+      "description": "Instalación de placas fotovoltaicas y placas solares para particulares y empresas en Sant Sadurní d'Anoia y el Penedès."
+    },
+    "illuminacio": {
+      "nom": "Iluminación",
+      "curt": "Proyectos de iluminación para salas, oficinas, bodegas y viviendas.",
+      "intro": "Realizamos proyectos de iluminación para salas, oficinas, bodegas, espacios comerciales y casas particulares. Buscamos una luz funcional que a la vez ponga en valor cada espacio.",
+      "llista": ["Proyectos de alumbrado interior", "Iluminación de bodegas y salas de cata", "Iluminación de oficinas y locales", "Iluminación decorativa y LED", "Rótulos y fachadas iluminadas"],
+      "title": "Proyectos de iluminación en el Penedès · Electricitat Samsó",
+      "description": "Proyectos de iluminación para salas, oficinas, bodegas y casas particulares en el Penedès. Iluminación LED y decorativa."
+    },
+    "extintors": {
+      "nom": "Extintores",
+      "curt": "Venta de extintores, detección de incendios y mantenimiento.",
+      "intro": "Trabajamos para empresas, comunidades de vecinos y particulares en la protección contra incendios: desde la venta de extintores hasta la instalación de sistemas de detección.",
+      "llista": ["Venta de todo tipo de extintores", "Mantenimiento y recambio de extintores", "Sistemas de detección de incendios", "Contratos de mantenimiento para comunidades de vecinos"],
+      "title": "Extintores y detección de incendios en el Penedès · Electricitat Samsó",
+      "description": "Venta, mantenimiento y recambio de extintores y sistemas de detección de incendios para empresas, comunidades y particulares en el Penedès."
+    },
+    "manteniment": {
+      "nom": "Mantenimiento",
+      "curt": "Mantenimiento para empresas y comunidades. Servicio de urgencias.",
+      "intro": "Nuestro personal está cualificado para realizar el mantenimiento de instalaciones de empresas y comunidades de vecinos. Y si tienes una avería en casa, puedes contar con un servicio profesional y familiar, con {anys} años de experiencia.",
+      "llista": ["Mantenimiento de instalaciones eléctricas y de agua", "Contratos de mantenimiento para empresas", "Mantenimiento para comunidades de vecinos", "Reparación de averías a particulares", "Servicio de urgencias"],
+      "title": "Mantenimiento de instalaciones y urgencias en el Penedès · Electricitat Samsó",
+      "description": "Mantenimiento de instalaciones eléctricas y de agua para empresas, comunidades de vecinos y particulares. Servicio de urgencias en el Penedès."
+    }
+  },
+  "timeline": [
+    { "any": "1950–1955", "text": "Pere Samsó estudia el oficio en los Salesianos de Sarrià." },
+    { "any": "1955–1958", "text": "Primeros años de trabajo en Barcelona, donde aprende las nuevas técnicas de automatismos." },
+    { "any": "1958", "text": "Vuelve a Sant Sadurní y empieza a bobinar motores en casa, un trabajo que nadie más hacía en el pueblo." },
+    { "any": "1960", "text": "Nace Electricitat Samsó." },
+    { "any": "1963", "text": "Traslado a un taller más grande en la calle Sant Pere. Llegan los armarios de distribución de media y alta potencia." },
+    { "any": "Años 60 y 70", "text": "La automatización y el cambio de voltaje hacen crecer la empresa hasta los 10 trabajadores." },
+    { "any": "Hasta 1980", "text": "Con cuatro instaladores más, forma la sociedad ADISA, que llega a los 28 trabajadores." },
+    { "any": "Hoy", "text": "Marcel y Sara, la segunda generación, continúan el proyecto familiar." }
+  ],
+  "historia": [
+    "A los de mi generación, cuando acababan los estudios en la escuela del pueblo, a pocos se les preguntaba «y ahora, ¿qué quieres hacer?». La mayoría empezaban a trabajar en el sector del cava, otros hacían de aprendices y unos cuantos pudimos estudiar para aprender un oficio fuera del pueblo.",
+    "Como mi padre, entre otras cosas, hacía de electricista, yo de joven lo acompañaba. Él, más que yo mismo, me orientó hacia el oficio, teniendo en cuenta que en aquel tiempo en el pueblo prácticamente solo hacían de electricista en Cal Costa y el Peret de Cal Xurrio.",
+    "Por eso fui uno de los afortunados que pudo seguir estudiando, y lo hice en los Salesianos de Sarrià desde 1950 hasta 1955. En aquel momento era un internado con una disciplina bastante dura: desde las 7 de la mañana hasta las 9 de la noche pasábamos el día entre teórica, práctica, cultura general, religión y recreo. Aun así, tengo un buen recuerdo.",
+    "De 1955 a 1958 trabajé en Barcelona poniendo en práctica el oficio aprendido e incorporando las nuevas técnicas de los automatismos, un tema prácticamente desconocido. En 1958 volví a Sant Sadurní y empecé a trabajar en casa bobinando motores, un trabajo que nadie más hacía en el pueblo.",
+    "En 1960 nace Electricitat Samsó. Empezamos bobinando motores con la ayuda de un aprendiz, Casas, que en poco tiempo aprendió el oficio y necesitó otro aprendiz. Yo me dediqué a las instalaciones, tanto domésticas como industriales.",
+    "En 1963 me casé con Carme Rosell, de Cal Fideué, y me trasladé a un taller más grande, en la calle Sant Pere. En ese momento se empezaban a montar armarios de distribución de media y alta potencia.",
+    "En los años 60 y 70 se generalizó la automatización y también el cambio de voltaje, lo que incrementó el trabajo y nos permitió llegar a los 10 trabajadores. Los trabajos fueron evolucionando: de bobinar motores a cambios de tensión de bobinado, pasando por el montaje de transformadores por cambio de voltaje. Las máquinas, que hasta entonces se ponían en marcha con un interruptor de palanca, pasaban a ponerse en marcha pulsando un botón.",
+    "Empezaron a tener presencia los gremios y aparecieron nuevos materiales. Esto, y el hecho de que las acometidas de agua, gas y electricidad, que hasta entonces hacían las compañías, las pudiera hacer el instalador capacitado, nos llevó, con cuatro instaladores más, a formar la sociedad ADISA, que llegó a los 28 trabajadores y se mantuvo hasta 1980 aproximadamente.",
+    "Todo iba evolucionando: las compañías eléctricas, las entidades oficiales, los gremios, los materiales, los sistemas de trabajo… y la familia también. Tuvimos cinco hijos; dos de ellos trabajan en la empresa, Marcel y Sara. Sara se dedica a la parte administrativa y Marcel a las instalaciones eléctricas, de agua y de refrigeración, tanto a nivel industrial como doméstico."
+  ]
+}

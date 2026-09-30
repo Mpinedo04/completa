@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import icon, formulari %}
+{% block contingut %}
+{% set lat = comun.geo.lat %}{% set lng = comun.geo.lng %}
+<section class="cap-pagina">
+  <div class="contenidor">
+    <nav class="molles" aria-label="breadcrumb"><a href="{{ url('inici') }}">{{ ui.inici }}</a> / <span>{{ info.titol }}</span></nav>
+    <h1>{{ info.titol }}</h1>
+    <p class="entradeta">{{ info.text }}</p>
+  </div>
+</section>
+
+<section class="seccio">
+  <div class="contenidor contacte-graella">
+    <ul class="dades-contacte">
+      <li>
+        <span class="dada-icona">{{ icon('phone', 22) }}</span>
+        <div><h2>{{ ui.telefon }}</h2><a class="dada-gran" href="tel:{{ comun.telefon_link }}">{{ comun.telefon }}</a></div>
+      </li>
+      <li>
+        <span class="dada-icona">{{ icon('mail', 22) }}</span>
+        <div><h2>{{ ui.email }}</h2><a href="mailto:{{ comun.email }}">{{ comun.email }}</a></div>
+      </li>
+      <li>
+        <span class="dada-icona">{{ icon('pin', 22) }}</span>
+        <div>
+          <h2>{{ ui.adreca }}</h2>
+          <address>{{ comun.adreca.carrer }}<br>{{ comun.adreca.cp }} {{ comun.adreca.poblacio }}<br>{{ comun.adreca.provincia }}</address>
+          <a class="enllac-fletxa" href="https://www.google.com/maps/search/?api=1&amp;query={{ lat }},{{ lng }}" target="_blank" rel="noopener">{{ ui.obrir_mapa }} {{ icon('arrow', 16) }}</a>
+        </div>
+      </li>
+      {% if comun.horari %}
+      <li>
+        <span class="dada-icona">{{ icon('clock', 22) }}</span>
+        <div><h2>{{ ui.horari }}</h2><p>{{ comun.horari[lang] }}</p></div>
+      </li>
+      {% endif %}
+    </ul>
+    <div class="mapa">
+      <iframe title="{{ ui.mapa_titol }}" loading="lazy"
+        src="https://www.openstreetmap.org/export/embed.html?bbox={{ '%.5f' | format(lng - 0.004) }}%2C{{ '%.5f' | format(lat - 0.0022) }}%2C{{ '%.5f' | format(lng + 0.004) }}%2C{{ '%.5f' | format(lat + 0.0022) }}&amp;layer=mapnik&amp;marker={{ lat }}%2C{{ lng }}"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="seccio seccio-crema">
+  <div class="contenidor contingut-estret">
+    <h2>{{ info.form_titol }}</h2>
+    {{ formulari(ui, comun, url, lang, 'contacte', t.serveis) }}
+  </div>
+</section>
+{% endblock %}

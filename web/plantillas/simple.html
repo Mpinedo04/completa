@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import icon %}
+{% block contingut %}
+<section class="seccio pagina-simple">
+  <div class="contenidor contingut-estret centrat">
+    {% if clave == 'error404' %}<p class="num-404">404</p>
+    {% elif clave == 'pendent' %}<span class="ok-icona">{{ icon('file', 36) }}</span>
+    {% else %}<span class="ok-icona">{{ icon('check', 40) }}</span>{% endif %}
+    <h1>{{ info.titol }}</h1>
+    <p class="entradeta">{{ info.text }}</p>
+    {% if info.llista is defined %}
+    <ul class="llista-check llista-pendent">
+      {% for item in info.llista %}<li>{{ icon('check', 20) }}<span>{{ item }}</span></li>{% endfor %}
+    </ul>
+    {% endif %}
+    <div class="botons botons-centre">
+      <a class="btn btn-primari" href="{{ url('inici') }}">{{ ui.tornar_inici }}</a>
+      {% if clave == 'pendent' %}
+      <a class="btn btn-contorn" href="{{ url('serveis/illuminacio.html') }}">{{ t.serveis.illuminacio.nom }}</a>
+      {% else %}
+      <a class="btn btn-contorn" href="{{ url('serveis') }}">{{ ui.tots_serveis }}</a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endblock %}

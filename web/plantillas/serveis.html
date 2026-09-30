@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import cta %}
+{% block contingut %}
+<section class="cap-pagina">
+  <div class="contenidor">
+    <nav class="molles" aria-label="breadcrumb"><a href="{{ url('inici') }}">{{ ui.inici }}</a> / <span>{{ info.titol }}</span></nav>
+    <h1>{{ info.titol }}</h1>
+    <p class="entradeta">{{ info.text }}</p>
+  </div>
+</section>
+<section class="seccio">
+  <div class="contenidor">
+    {% include 'targetes-serveis.html' %}
+  </div>
+</section>
+{{ cta(ui, comun, url) }}
+{% endblock %}

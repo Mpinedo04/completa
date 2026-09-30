@@ -1,0 +1,14 @@
+{% from 'macros.html' import icon %}
+<ul class="targetes">
+  {% for s in comun.serveis if s.slug != servei %}
+  {% set st = t.serveis[s.slug] %}{% set im = img(s.portada, 'card') %}
+  <li class="targeta">
+    <img src="{{ asset(im.src) }}" width="{{ im.w }}" height="{{ im.h }}" alt="" loading="lazy">
+    <div class="targeta-cos">
+      <h3><a href="{{ url('serveis/' ~ s.slug ~ '.html') }}">{{ st.nom }}</a></h3>
+      <p>{{ st.curt }}</p>
+      <span class="enllac-fletxa" aria-hidden="true">{{ ui.mes_info }} {{ icon('arrow', 16) }}</span>
+    </div>
+  </li>
+  {% endfor %}
+</ul>

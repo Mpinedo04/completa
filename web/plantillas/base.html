@@ -1,0 +1,126 @@
+{% from 'macros.html' import icon %}
+<!doctype html>
+<html lang="{{ lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if boceto %}[Esbós] {% endif %}{% block title %}{{ info.title }}{% endblock %}</title>
+  {% if info.description is defined %}<meta name="description" content="{{ info.description }}">{% endif %}
+  {% if indexable %}
+  <link rel="canonical" href="{{ canonical }}">
+  <link rel="alternate" hreflang="ca" href="{{ idiomas.ca }}">
+  <link rel="alternate" hreflang="es" href="{{ idiomas.es }}">
+  <link rel="alternate" hreflang="x-default" href="{{ idiomas.ca }}">
+  {% else %}
+  <meta name="robots" content="noindex">
+  {% endif %}
+  <meta name="theme-color" content="#e20015">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ comun.empresa }}">
+  <meta property="og:locale" content="{{ t.locale }}">
+  <meta property="og:title" content="{{ info.title }}">
+  {% if info.description is defined %}<meta property="og:description" content="{{ info.description }}">{% endif %}
+  <meta property="og:url" content="{{ canonical }}">
+  <meta property="og:image" content="{{ comun.site }}/img/og.jpg">
+  <link rel="icon" href="{{ asset('favicon.ico') }}" sizes="any">
+  <link rel="icon" href="{{ asset('img/favicon-32.png') }}" type="image/png">
+  <link rel="apple-touch-icon" href="{{ asset('img/apple-touch-icon.png') }}">
+  <link rel="stylesheet" href="{{ asset('css/estil.css') }}">
+  {% block cap %}{% endblock %}
+  {% if clave == 'inici' and not boceto %}<script type="application/ld+json">{{ json_ld }}</script>{% endif %}
+</head>
+<body class="pag-{{ clave.split(':')[0] }}"{% if boceto %} data-boceto{% endif %}>
+  <a class="saltar" href="#contingut">{{ ui.saltar }}</a>
+  {% if boceto %}
+  <div class="banda-esbos" role="note">
+    <div class="contenidor"><span>{{ ui.esbos_banner }}</span> <a href="{{ url('pendent.html') }}">{{ ui.esbos_inclou }}</a></div>
+  </div>
+  {% endif %}
+
+  <header class="capcalera">
+    <div class="contenidor capcalera-dins">
+      <a class="logo" href="{{ url('inici') }}" aria-label="{{ comun.empresa }} – {{ ui.inici }}">
+        <img src="{{ asset('img/logo.png') }}" alt="{{ comun.empresa }}" width="350" height="85">
+      </a>
+      <button class="menu-boto" type="button" aria-expanded="false" aria-controls="menu" data-menu-boto>
+        <span class="obre">{{ icon('menu', 24) }}</span><span class="tanca">{{ icon('close', 24) }}</span>
+        <span class="sr">{{ ui.menu }}</span>
+      </button>
+      <nav class="menu" id="menu" aria-label="{{ ui.menu }}">
+        <ul>
+          {% set seccio = clave.split(':')[0] %}
+          <li><a href="{{ url('inici') }}"{% if seccio == 'inici' %} aria-current="page"{% endif %}>{{ ui.inici }}</a></li>
+          <li><a href="{{ url('serveis') }}"{% if seccio in ('serveis', 'servei') %} aria-current="page"{% endif %}>{{ ui.serveis }}</a></li>
+          <li><a href="{{ url('experiencia') }}"{% if seccio == 'experiencia' %} aria-current="page"{% endif %}>{{ ui.experiencia }}</a></li>
+          <li><a href="{{ url('contacte') }}"{% if seccio == 'contacte' %} aria-current="page"{% endif %}>{{ ui.contacte }}</a></li>
+        </ul>
+        <div class="menu-accions">
+          <a class="telefon-cap" href="tel:{{ comun.telefon_link }}">{{ icon('phone', 18) }}<span>{{ comun.telefon }}</span></a>
+          <a class="btn btn-primari btn-petit" href="{{ url('pressupost') }}">{{ ui.pressupost }}</a>
+          <a class="idioma" href="{{ url_otro }}" hreflang="{{ lang_otro }}" lang="{{ lang_otro }}">{{ idioma_otro }}</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contingut">
+    {% block contingut %}{% endblock %}
+  </main>
+
+  <footer class="peu">
+    <div class="contenidor peu-graella">
+      <div class="peu-marca">
+        <img src="{{ asset('img/logo.png') }}" alt="{{ comun.empresa }}" width="175" height="43" loading="lazy">
+        <p>{{ t.paginas.inici.hero_text }}</p>
+      </div>
+      <div>
+        <h2 class="peu-titol">{{ ui.contacte }}</h2>
+        <ul class="peu-llista">
+          <li>{{ icon('pin', 16) }}<span>{{ comun.adreca.carrer }}<br>{{ comun.adreca.cp }} {{ comun.adreca.poblacio }}</span></li>
+          <li>{{ icon('phone', 16) }}<a href="tel:{{ comun.telefon_link }}">{{ comun.telefon }}</a></li>
+          <li>{{ icon('mail', 16) }}<a href="mailto:{{ comun.email }}">{{ comun.email }}</a></li>
+          {% if comun.horari %}<li>{{ icon('clock', 16) }}<span>{{ comun.horari[lang] }}</span></li>{% endif %}
+        </ul>
+      </div>
+      <div>
+        <h2 class="peu-titol">{{ ui.serveis }}</h2>
+        <ul class="peu-llista peu-links">
+          {% for s in comun.serveis %}<li><a href="{{ url('serveis/' ~ s.slug ~ '.html') }}">{{ t.serveis[s.slug].nom }}</a></li>{% endfor %}
+        </ul>
+      </div>
+      <div>
+        <h2 class="peu-titol">{{ ui.seccions }}</h2>
+        <ul class="peu-llista peu-links">
+          <li><a href="{{ url('inici') }}">{{ ui.inici }}</a></li>
+          <li><a href="{{ url('experiencia') }}">{{ ui.experiencia }}</a></li>
+          <li><a href="{{ url('pressupost') }}">{{ ui.pressupost }}</a></li>
+          <li><a href="{{ url('contacte') }}">{{ ui.contacte }}</a></li>
+          <li><a href="{{ url_otro }}" hreflang="{{ lang_otro }}" lang="{{ lang_otro }}">{{ idioma_otro }}</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="contenidor peu-legal">
+      <p>© {{ any_actual }} {{ comun.empresa }}. {{ ui.drets }} {{ ui.cookies_nota }}</p>
+      <p><a href="{{ url('avis-legal') }}">{{ ui.avis_legal }}</a> · <a href="{{ url('privacitat') }}">{{ ui.privacitat }}</a></p>
+    </div>
+  </footer>
+
+  <div class="barra-mobil" aria-label="{{ ui.contacte }}">
+    <a href="tel:{{ comun.telefon_link }}" class="barra-trucar">{{ icon('phone', 20) }}<span>{{ ui.trucar }}</span></a>
+    {% if comun.whatsapp %}<a href="https://wa.me/{{ comun.whatsapp }}" class="barra-whatsapp">{{ icon('chat', 20) }}<span>{{ ui.whatsapp }}</span></a>{% endif %}
+    <a href="{{ url('pressupost') }}" class="barra-pressupost">{{ icon('file', 20) }}<span>{{ ui.pressupost_curt }}</span></a>
+  </div>
+
+  <dialog class="lightbox" data-lightbox-dialog aria-label="{{ ui.ampliar }}">
+    <figure>
+      <img alt="" data-lightbox-img>
+      <figcaption data-lightbox-text data-foto="{{ ui.foto }}" data-de="{{ ui.de }}"></figcaption>
+    </figure>
+    <button class="lb-boto lb-tanca" type="button" data-lightbox-tanca aria-label="{{ ui.tancar }}">{{ icon('close', 26) }}</button>
+    <button class="lb-boto lb-ant" type="button" data-lightbox-ant aria-label="{{ ui.anterior }}">{{ icon('prev', 30) }}</button>
+    <button class="lb-boto lb-seg" type="button" data-lightbox-seg aria-label="{{ ui.seguent }}">{{ icon('next', 30) }}</button>
+  </dialog>
+
+  <script src="{{ asset('js/main.js') }}" defer></script>
+</body>
+</html>

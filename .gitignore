@@ -1,0 +1,12 @@
+# el esbós tiene su propio repositorio (github.com/Mpinedo04/boceto)
+web/dist-boceto/
+web/esbos-electricitat-samso.zip
+
+# material privado de venta: no se publica
+PROPUESTA-llamada.md
+propuesta/
+
+# local
+.claude/
+__pycache__/
+*.pyc
