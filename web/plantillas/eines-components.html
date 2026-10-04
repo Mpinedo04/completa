@@ -1,0 +1,115 @@
+{% from 'macros.html' import icon %}
+
+{# ---------- Assistent d'avaries: sense JS es veuen totes les respostes; amb JS, un panell cada cop ---------- #}
+{% macro avaries(t, ui, url, comun, titol_h='h2') -%}
+{% set e = t.eines.avaries %}
+<div class="eina eina-avaries" id="avaries" data-avaries>
+  <div class="eina-cap">
+    <span class="eina-icona">{{ icon('wrench', 26) }}</span>
+    <div><{{ titol_h }} class="eina-titol">{{ e.titol }}</{{ titol_h }}><p>{{ e.curt }}</p></div>
+  </div>
+  <p class="avaries-pregunta">{{ e.pregunta }}</p>
+  <ul class="avaries-opcions">
+    {% for o in e.opcions %}
+    <li>
+      <a class="avaria-opcio urg-{{ o.urgencia }}" href="#avaria-{{ o.id }}" data-avaria="{{ o.id }}" aria-controls="avaria-{{ o.id }}">
+        <span class="ao-icona">{{ icon(o.icona, 22) }}</span>
+        <span class="ao-text">{{ o.titol }}</span>
+        {% if o.urgencia == 'alta' %}<span class="ao-urg">{{ e.urgencia.alta }}</span>{% endif %}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% for o in e.opcions %}
+  <section class="avaria-resultat urg-{{ o.urgencia }}" id="avaria-{{ o.id }}" tabindex="-1" aria-label="{{ o.titol }}">
+    <div class="ar-cap">
+      <span class="ar-icona">{{ icon(o.icona, 26) }}</span>
+      <div>
+        <span class="urg-etiqueta">{{ e.urgencia[o.urgencia] }}</span>
+        <h3>{{ o.titol }}</h3>
+      </div>
+    </div>
+    <h4>{{ e.que_fer }}</h4>
+    <ol class="ar-passos">{% for p in o.passos %}<li>{{ p }}</li>{% endfor %}</ol>
+    <div class="botons">
+      <a class="btn {{ 'btn-primari' if o.urgencia == 'alta' else 'btn-contorn' }}" href="tel:{{ comun.telefon_link }}">{{ icon('phone', 18) }}<span>{{ e.boto_trucar }}</span></a>
+      <a class="btn {{ 'btn-contorn' if o.urgencia == 'alta' else 'btn-primari' }}" href="{{ url('pressupost') }}?servei={{ o.servei }}&amp;motiu={{ o.titol | urlencode }}">{{ e.boto_visita }}</a>
+      <button class="btn-text" type="button" data-avaria-tornar hidden>{{ e.tornar }}</button>
+    </div>
+  </section>
+  {% endfor %}
+</div>
+{%- endmacro %}
+
+{# ---------- Calculadora solar ---------- #}
+{% macro solar(t, ui, url, titol_h='h2') -%}
+{% set e = t.eines.solar %}
+<div class="eina eina-solar" id="solar" data-solar data-anys="{{ e.anys }}" data-per-any="{{ e.per_any }}">
+  <div class="eina-cap">
+    <span class="eina-icona eina-icona-sol">{{ icon('sun', 26) }}</span>
+    <div><{{ titol_h }} class="eina-titol">{{ e.titol }}</{{ titol_h }}><p>{{ e.curt }}</p></div>
+  </div>
+  <div class="solar-graella">
+    <div class="solar-controls">
+      <fieldset class="segmentat">
+        <legend>{{ e.tipus }}</legend>
+        <label><input type="radio" name="solar-tipus" value="casa" checked><span>{{ e.tipus_casa }}</span></label>
+        <label><input type="radio" name="solar-tipus" value="empresa"><span>{{ e.tipus_empresa }}</span></label>
+      </fieldset>
+      <label class="rang-etiqueta" for="solar-factura">{{ e.factura }}</label>
+      <div class="rang">
+        <input id="solar-factura" type="range" min="30" max="400" step="5" value="90" data-solar-factura>
+        <output for="solar-factura" data-solar-factura-out>90 €</output>
+      </div>
+      <div class="plaques-visual" data-solar-plaques aria-hidden="true"></div>
+    </div>
+    <dl class="resultats" aria-live="polite">
+      <div class="resultat resultat-gran"><dt>{{ e.r_estalvi }}</dt><dd data-r="estalvi">–</dd></div>
+      <div class="resultat"><dt>{{ e.r_plaques }}</dt><dd data-r="plaques">–</dd></div>
+      <div class="resultat"><dt>{{ e.r_potencia }}</dt><dd data-r="potencia">–</dd></div>
+      <div class="resultat"><dt>{{ e.r_inversio }}</dt><dd data-r="inversio">–</dd></div>
+      <div class="resultat"><dt>{{ e.r_amortitzacio }}</dt><dd data-r="amortitzacio">–</dd></div>
+    </dl>
+  </div>
+  <p class="eina-avis">{{ e.avis }}</p>
+  <a class="btn btn-primari" href="{{ url('pressupost') }}?servei=energies-renovables&amp;motiu={{ e.titol | urlencode }}">{{ e.boto }}</a>
+</div>
+{%- endmacro %}
+
+{# ---------- Calculadora de potència ---------- #}
+{% macro potencia(t, ui, url, titol_h='h2') -%}
+{% set e = t.eines.potencia %}
+{% set trams = [3.45, 4.6, 5.75, 6.9, 8.05, 9.2, 10.35, 11.5, 14.49] %}
+<div class="eina eina-potencia" id="potencia" data-potencia data-trams="{{ trams | join(',') }}">
+  <div class="eina-cap">
+    <span class="eina-icona">{{ icon('gauge', 26) }}</span>
+    <div><{{ titol_h }} class="eina-titol">{{ e.titol }}</{{ titol_h }}><p>{{ e.curt }}</p></div>
+  </div>
+  <p class="avaries-pregunta">{{ e.instruccions }}</p>
+  <ul class="aparells">
+    {% for a in e.aparells %}
+    <li>
+      <label class="aparell">
+        <input type="checkbox" data-w="{{ a.w }}"{% if a.on is defined and a.on %} checked{% endif %}>
+        <span class="ap-check" aria-hidden="true">{{ icon('check', 16) }}</span>
+        <span class="ap-nom">{{ a.nom }}</span>
+        <span class="ap-w">{{ '{:,}'.format(a.w).replace(',', '.') }} W</span>
+      </label>
+    </li>
+    {% endfor %}
+  </ul>
+  <div class="potencia-resultat" aria-live="polite">
+    <dl class="resultats resultats-2">
+      <div class="resultat"><dt>{{ e.total }}</dt><dd data-r="total">–</dd></div>
+      <div class="resultat resultat-gran"><dt>{{ e.recomanada }}</dt><dd data-r="recomanada">–</dd></div>
+    </dl>
+    <div class="trams" aria-hidden="true">
+      <div class="trams-barra"><span class="trams-ple" data-trams-ple></span></div>
+      <ol class="trams-marques">{% for tr in trams %}<li data-tram="{{ tr }}">{{ ('%g' % tr).replace('.', ',') }}</li>{% endfor %}</ol>
+    </div>
+    <p class="eina-alerta" data-trifasica hidden>{{ e.avis_trifasica }}</p>
+  </div>
+  <p class="eina-avis">{{ e.avis }}</p>
+  <a class="btn btn-primari" href="{{ url('pressupost') }}?servei=electricitat&amp;motiu={{ e.titol | urlencode }}">{{ e.boto }}</a>
+</div>
+{%- endmacro %}

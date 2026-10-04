@@ -62,7 +62,12 @@
     "esbos_banner": "Proposta de disseny (esbós) de la nova web d'Electricitat Samsó · No és la web oficial",
     "idioma": "Idioma",
     "esbos_titol": "Esbós",
-    "esbos_inclou": "Què inclou?"
+    "esbos_inclou": "Què inclou?",
+    "treballs_nav": "Treballs",
+    "eines_nav": "Eines",
+    "filtre_tots": "Tots",
+    "veure_treballs": "Veure tots els treballs",
+    "obrir_eina": "Obre l'eina"
   },
   "paginas": {
     "inici": {
@@ -72,19 +77,43 @@
       "hero_titol": "Electricitat, aigua i climatització al Penedès",
       "hero_text": "Empresa familiar amb {anys} anys d'experiència. Treballem per a particulars, comunitats de veïns i empreses de tot el Penedès.",
       "xifres": [
-        { "num": "1960", "text": "Any de fundació" },
-        { "num": "{anys}", "text": "Anys d'experiència" },
-        { "num": "8", "text": "Especialitats" },
-        { "num": "2", "text": "Generacions al capdavant" }
+        {
+          "num": "1960",
+          "text": "Any de fundació"
+        },
+        {
+          "num": "{anys}",
+          "text": "Anys d'experiència"
+        },
+        {
+          "num": "8",
+          "text": "Especialitats"
+        },
+        {
+          "num": "2",
+          "text": "Generacions al capdavant"
+        }
       ],
       "serveis_titol": "Els nostres serveis",
       "serveis_text": "Des d'una avaria a casa fins a la instal·lació completa d'un celler o una nau industrial.",
       "perque_titol": "Per què Electricitat Samsó",
       "perque": [
-        { "titol": "Empresa familiar", "text": "Fundada per Pere Samsó l'any 1960. Avui la continuen el Marcel i la Sara, la segona generació." },
-        { "titol": "Tracte directe", "text": "Parles directament amb qui fa la feina. Un servei proper, personalitzat i de qualitat." },
-        { "titol": "Particulars i empreses", "text": "Habitatges, comunitats de veïns, oficines, cellers i naus industrials." },
-        { "titol": "Tràmits inclosos", "text": "Ens ocupem de les legalitzacions i de les memòries tècniques perquè no t'hagis de preocupar de res." }
+        {
+          "titol": "Empresa familiar",
+          "text": "Fundada per Pere Samsó l'any 1960. Avui la continuen el Marcel i la Sara, la segona generació."
+        },
+        {
+          "titol": "Tracte directe",
+          "text": "Parles directament amb qui fa la feina. Un servei proper, personalitzat i de qualitat."
+        },
+        {
+          "titol": "Particulars i empreses",
+          "text": "Habitatges, comunitats de veïns, oficines, cellers i naus industrials."
+        },
+        {
+          "titol": "Tràmits inclosos",
+          "text": "Ens ocupem de les legalitzacions i de les memòries tècniques perquè no t'hagis de preocupar de res."
+        }
       ],
       "historia_titol": "Més de sis dècades al servei del Penedès",
       "historia_text": "L'any 1960 Pere Samsó va començar bobinant motors a Sant Sadurní. Des d'aleshores hem viscut l'arribada de l'automatització, el canvi de voltatge i les energies renovables, sempre amb el mateix compromís.",
@@ -92,7 +121,19 @@
       "historia_autor": "Pere Samsó, fundador",
       "historia_boto": "Coneix la nostra història",
       "treballs_titol": "Alguns dels nostres treballs",
-      "treballs_text": "Instal·lacions fetes per a cellers, empreses i particulars de la comarca."
+      "treballs_text": "Instal·lacions fetes per a cellers, empreses i particulars de la comarca.",
+      "hero_prefix": "Instal·lacions de",
+      "hero_rotador": [
+        "electricitat",
+        "aigua",
+        "climatització",
+        "energia solar",
+        "il·luminació"
+      ],
+      "hero_sufix": "al Penedès",
+      "eines_titol": "Resol-ho en un minut",
+      "eines_text": "Eines gratuïtes per saber què fer davant d'una avaria o fer números abans de trucar-nos.",
+      "faq_titol": "Preguntes freqüents"
     },
     "serveis": {
       "title": "Serveis · Electricitat Samsó",
@@ -108,7 +149,10 @@
       "timeline_titol": "Moments clau",
       "relat_titol": "En paraules de Pere Samsó",
       "anuncis_titol": "Anuncis d'època",
-      "anuncis_alt": ["Anunci antic: Rebobinado de motores, instalaciones eléctricas, material eléctrico. Samsó, Sant Sadurní de Noya", "Anunci antic d'Electricitat Samsó: rebobinat de motors, automàtics, instal·lacions industrials i domèstiques"]
+      "anuncis_alt": [
+        "Anunci antic: Rebobinado de motores, instalaciones eléctricas, material eléctrico. Samsó, Sant Sadurní de Noya",
+        "Anunci antic d'Electricitat Samsó: rebobinat de motors, automàtics, instal·lacions industrials i domèstiques"
+      ]
     },
     "contacte": {
       "title": "Contacte · Electricitat Samsó, Sant Sadurní d'Anoia",
@@ -125,9 +169,18 @@
       "urgent": "És urgent? Truca'ns directament al",
       "passos_titol": "Com funciona",
       "passos": [
-        { "titol": "Explica'ns què necessites", "text": "Omple el formulari o truca'ns." },
-        { "titol": "Et truquem", "text": "Confirmem el dia i l'hora de la visita." },
-        { "titol": "Visita i pressupost", "text": "Revisem la instal·lació i et donem un pressupost sense compromís." }
+        {
+          "titol": "Explica'ns què necessites",
+          "text": "Omple el formulari o truca'ns."
+        },
+        {
+          "titol": "Et truquem",
+          "text": "Confirmem el dia i l'hora de la visita."
+        },
+        {
+          "titol": "Visita i pressupost",
+          "text": "Revisem la instal·lació i et donem un pressupost sense compromís."
+        }
       ]
     },
     "gracies": {
@@ -159,6 +212,18 @@
     "privacitat": {
       "title": "Política de privacitat · Electricitat Samsó",
       "titol": "Política de privacitat"
+    },
+    "eines": {
+      "title": "Eines útils: avaries, calculadora solar i de potència · Electricitat Samsó",
+      "description": "Què fer si salta el diferencial o tens una fuita, quant pots estalviar amb plaques solars i quina potència elèctrica necessites. Eines gratuïtes d'Electricitat Samsó.",
+      "titol": "Eines útils",
+      "text": "Respostes ràpides abans de trucar-nos: què fer davant d'una avaria, quant podries estalviar amb plaques solars i quina potència necessites contractar."
+    },
+    "treballs": {
+      "title": "Treballs realitzats · Electricitat Samsó",
+      "description": "Instal·lacions elèctriques, d'aigua, gas, climatització, plaques solars i il·luminació fetes per Electricitat Samsó per a cellers, empreses i particulars del Penedès.",
+      "titol": "Treballs realitzats",
+      "text": "Una selecció de les instal·lacions que hem fet per a cellers, empreses i particulars del Penedès. Filtra per servei i toca una foto per ampliar-la."
     }
   },
   "serveis": {
@@ -166,7 +231,14 @@
       "nom": "Electricitat",
       "curt": "Instal·lacions elèctriques domèstiques i industrials, quadres i automatització.",
       "intro": "Realitzem tot tipus d'instal·lacions elèctriques, tant a nivell domèstic com industrial. Des de la reforma d'un habitatge fins al quadre elèctric d'una nau o d'un celler, ens encarreguem de la instal·lació i de la seva legalització.",
-      "llista": ["Instal·lacions elèctriques noves i reformes", "Canalitzacions elèctriques i cablejat", "Armaris i quadres elèctrics per a empreses", "Automatització de maquinària i processos", "Xarxes de dades: cablejat RJ45 i informàtic", "Gestió i presentació de legalitzacions elèctriques a ECA"],
+      "llista": [
+        "Instal·lacions elèctriques noves i reformes",
+        "Canalitzacions elèctriques i cablejat",
+        "Armaris i quadres elèctrics per a empreses",
+        "Automatització de maquinària i processos",
+        "Xarxes de dades: cablejat RJ45 i informàtic",
+        "Gestió i presentació de legalitzacions elèctriques a ECA"
+      ],
       "title": "Electricista al Penedès · Instal·lacions elèctriques · Electricitat Samsó",
       "description": "Instal·lacions elèctriques domèstiques i industrials a Sant Sadurní d'Anoia i el Penedès: quadres elèctrics, automatització, cablejat RJ45 i legalitzacions."
     },
@@ -174,7 +246,14 @@
       "nom": "Aigua",
       "curt": "Distribució d'aigua, grups de pressió, descalcificadors i calefacció.",
       "intro": "Projectem i fem instal·lacions de distribució d'aigua per a habitatges, empreses i indústria. També instal·lem sistemes de tractament d'aigua i calefacció de gas i de gasoil.",
-      "llista": ["Instal·lacions de distribució d'aigua", "Muntants d'aigua i grups de pressió", "Tractament d'aigua: descalcificadors i osmosi", "Canvis de bateries de comptadors", "Calefacció de gas i de gasoil", "Confecció i tramitació de memòries tècniques"],
+      "llista": [
+        "Instal·lacions de distribució d'aigua",
+        "Muntants d'aigua i grups de pressió",
+        "Tractament d'aigua: descalcificadors i osmosi",
+        "Canvis de bateries de comptadors",
+        "Calefacció de gas i de gasoil",
+        "Confecció i tramitació de memòries tècniques"
+      ],
       "title": "Lampista al Penedès · Instal·lacions d'aigua · Electricitat Samsó",
       "description": "Instal·lacions d'aigua, grups de pressió, descalcificadors, osmosi i calefacció per a habitatges i empreses a Sant Sadurní d'Anoia i el Penedès."
     },
@@ -182,7 +261,13 @@
       "nom": "Líquids i gasos",
       "curt": "Instal·lacions de gas, aire comprimit i canonada inoxidable.",
       "intro": "Fem instal·lacions de gas per a particulars i empreses, i canonades industrials per a líquids i aire comprimit, amb totes les vàlvules i elements necessaris. Et proposem la millor solució per a la teva llar o empresa.",
-      "llista": ["Instal·lacions de gas per a habitatges i empreses", "Canonades de gas natural per a escomeses d'habitatges i fàbriques", "Canonada d'acer inoxidable per a maquinària de pressió", "Xarxes d'aire comprimit", "Vàlvules i elements de regulació"],
+      "llista": [
+        "Instal·lacions de gas per a habitatges i empreses",
+        "Canonades de gas natural per a escomeses d'habitatges i fàbriques",
+        "Canonada d'acer inoxidable per a maquinària de pressió",
+        "Xarxes d'aire comprimit",
+        "Vàlvules i elements de regulació"
+      ],
       "title": "Instal·lacions de gas i aire comprimit al Penedès · Electricitat Samsó",
       "description": "Instal·lacions de gas, canonada d'acer inoxidable i aire comprimit per a particulars, cellers i indústria al Penedès."
     },
@@ -190,7 +275,12 @@
       "nom": "Refrigeració i climatització",
       "curt": "Aire condicionat i climatització per a habitatges, oficines i naus.",
       "intro": "Instal·lem equips d'aire condicionat, refrigeració i climatització a nivell domèstic i industrial: habitatges, oficines, locals i naus industrials.",
-      "llista": ["Aire condicionat per a habitatges", "Climatització d'oficines i locals", "Refrigeració i climatització de naus industrials", "Manteniment i reparació d'equips"],
+      "llista": [
+        "Aire condicionat per a habitatges",
+        "Climatització d'oficines i locals",
+        "Refrigeració i climatització de naus industrials",
+        "Manteniment i reparació d'equips"
+      ],
       "title": "Aire condicionat i climatització al Penedès · Electricitat Samsó",
       "description": "Instal·lació i manteniment d'aire condicionat, refrigeració i climatització per a habitatges, oficines i naus industrials al Penedès."
     },
@@ -198,7 +288,13 @@
       "nom": "Energies renovables",
       "curt": "Plaques fotovoltaiques i solars per a particulars i empreses.",
       "intro": "Instal·lem plaques fotovoltaiques i plaques solars tant per a particulars com per a empreses, perquè aprofitis l'energia del sol i redueixis la factura.",
-      "llista": ["Plaques solars fotovoltaiques", "Plaques solars tèrmiques", "Instal·lacions per a habitatges", "Instal·lacions per a empreses i naus", "Assessorament per triar la instal·lació adequada"],
+      "llista": [
+        "Plaques solars fotovoltaiques",
+        "Plaques solars tèrmiques",
+        "Instal·lacions per a habitatges",
+        "Instal·lacions per a empreses i naus",
+        "Assessorament per triar la instal·lació adequada"
+      ],
       "title": "Plaques solars i fotovoltaiques al Penedès · Electricitat Samsó",
       "description": "Instal·lació de plaques fotovoltaiques i plaques solars per a particulars i empreses a Sant Sadurní d'Anoia i el Penedès."
     },
@@ -206,7 +302,13 @@
       "nom": "Il·luminació",
       "curt": "Projectes d'il·luminació per a sales, oficines, cellers i habitatges.",
       "intro": "Fem projectes d'il·luminació per a sales, oficines, cellers, espais comercials i cases particulars. Busquem una llum funcional que alhora posi en valor cada espai.",
-      "llista": ["Projectes d'enllumenat interior", "Il·luminació de cellers i sales de tast", "Il·luminació d'oficines i locals", "Il·luminació decorativa i LED", "Rètols i façanes il·luminades"],
+      "llista": [
+        "Projectes d'enllumenat interior",
+        "Il·luminació de cellers i sales de tast",
+        "Il·luminació d'oficines i locals",
+        "Il·luminació decorativa i LED",
+        "Rètols i façanes il·luminades"
+      ],
       "title": "Projectes d'il·luminació al Penedès · Electricitat Samsó",
       "description": "Projectes d'il·luminació per a sales, oficines, cellers i cases particulars al Penedès. Il·luminació LED i decorativa."
     },
@@ -214,7 +316,12 @@
       "nom": "Extintors",
       "curt": "Venda d'extintors, detecció d'incendis i manteniment.",
       "intro": "Treballem per a empreses, comunitats de veïns i particulars en la protecció contra incendis: des de la venda d'extintors fins a la instal·lació de sistemes de detecció.",
-      "llista": ["Venda de tot tipus d'extintors", "Manteniment i recanvi d'extintors", "Sistemes de detecció d'incendis", "Contractes de manteniment per a comunitats de veïns"],
+      "llista": [
+        "Venda de tot tipus d'extintors",
+        "Manteniment i recanvi d'extintors",
+        "Sistemes de detecció d'incendis",
+        "Contractes de manteniment per a comunitats de veïns"
+      ],
       "title": "Extintors i detecció d'incendis al Penedès · Electricitat Samsó",
       "description": "Venda, manteniment i recanvi d'extintors i sistemes de detecció d'incendis per a empreses, comunitats i particulars al Penedès."
     },
@@ -222,20 +329,50 @@
       "nom": "Manteniment",
       "curt": "Manteniment per a empreses i comunitats. Servei d'urgències.",
       "intro": "El nostre personal està qualificat per fer el manteniment d'instal·lacions d'empreses i comunitats de veïns. I si tens una avaria a casa, pots comptar amb un servei professional i familiar, amb {anys} anys d'experiència.",
-      "llista": ["Manteniment d'instal·lacions elèctriques i d'aigua", "Contractes de manteniment per a empreses", "Manteniment per a comunitats de veïns", "Reparació d'avaries a particulars", "Servei d'urgències"],
+      "llista": [
+        "Manteniment d'instal·lacions elèctriques i d'aigua",
+        "Contractes de manteniment per a empreses",
+        "Manteniment per a comunitats de veïns",
+        "Reparació d'avaries a particulars",
+        "Servei d'urgències"
+      ],
       "title": "Manteniment d'instal·lacions i urgències al Penedès · Electricitat Samsó",
       "description": "Manteniment d'instal·lacions elèctriques i d'aigua per a empreses, comunitats de veïns i particulars. Servei d'urgències al Penedès."
     }
   },
   "timeline": [
-    { "any": "1950–1955", "text": "Pere Samsó estudia l'ofici als Salesians de Sarrià." },
-    { "any": "1955–1958", "text": "Primers anys de feina a Barcelona, on aprèn les noves tècniques d'automatismes." },
-    { "any": "1958", "text": "Torna a Sant Sadurní i comença a bobinar motors a casa, una feina que ningú més feia a la vila." },
-    { "any": "1960", "text": "Neix Electricitat Samsó." },
-    { "any": "1963", "text": "Trasllat a un taller més gran al carrer Sant Pere. Arriben els armaris de distribució de mitja i alta potència." },
-    { "any": "Anys 60 i 70", "text": "L'automatització i el canvi de voltatge fan créixer l'empresa fins als 10 treballadors." },
-    { "any": "Fins al 1980", "text": "Amb quatre instal·ladors més, forma la societat ADISA, que arriba als 28 treballadors." },
-    { "any": "Avui", "text": "El Marcel i la Sara, la segona generació, continuen el projecte familiar." }
+    {
+      "any": "1950–1955",
+      "text": "Pere Samsó estudia l'ofici als Salesians de Sarrià."
+    },
+    {
+      "any": "1955–1958",
+      "text": "Primers anys de feina a Barcelona, on aprèn les noves tècniques d'automatismes."
+    },
+    {
+      "any": "1958",
+      "text": "Torna a Sant Sadurní i comença a bobinar motors a casa, una feina que ningú més feia a la vila."
+    },
+    {
+      "any": "1960",
+      "text": "Neix Electricitat Samsó."
+    },
+    {
+      "any": "1963",
+      "text": "Trasllat a un taller més gran al carrer Sant Pere. Arriben els armaris de distribució de mitja i alta potència."
+    },
+    {
+      "any": "Anys 60 i 70",
+      "text": "L'automatització i el canvi de voltatge fan créixer l'empresa fins als 10 treballadors."
+    },
+    {
+      "any": "Fins al 1980",
+      "text": "Amb quatre instal·ladors més, forma la societat ADISA, que arriba als 28 treballadors."
+    },
+    {
+      "any": "Avui",
+      "text": "El Marcel i la Sara, la segona generació, continuen el projecte familiar."
+    }
   ],
   "historia": [
     "Als de la meva generació, quan acabaven els estudis a l'escola del poble, a pocs se'ls preguntava «i ara, què vols fer?». La majoria començaven a treballar al sector del cava, d'altres feien d'aprenents i uns quants vàrem poder estudiar per aprendre un ofici fora de la vila.",
@@ -247,5 +384,222 @@
     "Als anys 60 i 70 es va generalitzar l'automatització i també el canvi de voltatge, fet que va incrementar la feina i ens va permetre arribar als 10 treballadors. Les feines van anar evolucionant: de bobinar motors a canvis de tensió de bobinat, passant pel muntatge de transformadors per canvi de voltatge. Les màquines, que fins aleshores s'engegaven amb un interruptor de palanca, passaven a posar-se en marxa prement un botó.",
     "Van començar a tenir presència els gremis i van aparèixer nous materials. Això, i el fet que les escomeses d'aigua, gas i electricitat, que fins aleshores feien les companyies, les pogués fer l'instal·lador capacitat, ens va dur, amb quatre instal·ladors més, a formar la societat ADISA, que va arribar als 28 treballadors i es va mantenir fins al 1980 aproximadament.",
     "Tot anava evolucionant: les companyies elèctriques, les entitats oficials, els gremis, els materials, els sistemes de treball… i la família també. Vam tenir cinc fills; dos d'ells treballen a l'empresa, el Marcel i la Sara. La Sara es dedica a la part administrativa i el Marcel a les instal·lacions elèctriques, d'aigua i de refrigeració, tant a nivell industrial com domèstic."
-  ]
+  ],
+  "faq": [
+    {
+      "p": "Feu butlletins i legalitzacions elèctriques?",
+      "r": "Sí. Ens ocupem de la legalització de les instal·lacions elèctriques davant d'ECA i de preparar les memòries tècniques necessàries."
+    },
+    {
+      "p": "Teniu servei d'urgències?",
+      "r": "Sí. Si tens una avaria urgent, truca'ns al 93 891 09 11."
+    },
+    {
+      "p": "Treballeu per a comunitats de veïns i empreses?",
+      "r": "Sí. Fem instal·lacions i contractes de manteniment per a comunitats de veïns, empreses, cellers i naus industrials, i també per a particulars."
+    },
+    {
+      "p": "Quina zona cobriu?",
+      "r": "Som a Sant Sadurní d'Anoia i treballem a tot el Penedès."
+    },
+    {
+      "p": "Demanar pressupost em compromet a alguna cosa?",
+      "r": "No. El pressupost és sense compromís: revisem el que necessites i t'expliquem les opcions."
+    },
+    {
+      "p": "Instal·leu plaques solars a habitatges?",
+      "r": "Sí, instal·lem plaques fotovoltaiques i solars tant per a particulars com per a empreses. Pots fer-te una idea de l'estalvi amb la nostra calculadora solar."
+    }
+  ],
+  "eines": {
+    "avaries": {
+      "titol": "Què et passa?",
+      "curt": "Tria el problema i et diem què pots fer ara mateix i com d'urgent és.",
+      "pregunta": "Quin problema tens?",
+      "que_fer": "Què pots fer ara mateix",
+      "urgencia": {
+        "alta": "Urgent",
+        "mitja": "Convé revisar-ho aviat",
+        "baixa": "Sense urgència"
+      },
+      "boto_visita": "Demana una visita",
+      "boto_trucar": "Truca'ns ara",
+      "tornar": "Tria un altre problema",
+      "opcions": [
+        {
+          "id": "diferencial",
+          "titol": "Salta el diferencial o un automàtic",
+          "icona": "zap",
+          "urgencia": "mitja",
+          "servei": "electricitat",
+          "passos": [
+            "Desendolla els aparells del circuit que ha saltat.",
+            "Torna a pujar el diferencial o l'automàtic.",
+            "Endolla els aparells d'un en un: si salta en endollar-ne un, el problema és aquell aparell.",
+            "Si salta amb tot desendollat, pot haver-hi una derivació a la instal·lació: no ho intentis més i truca'ns."
+          ]
+        },
+        {
+          "id": "sense-llum",
+          "titol": "No tinc llum a casa",
+          "icona": "bulb",
+          "urgencia": "mitja",
+          "servei": "electricitat",
+          "passos": [
+            "Mira si els veïns o l'enllumenat del carrer tenen llum: si no en tenen, és un tall de la companyia.",
+            "Comprova el quadre elèctric: l'interruptor general, el diferencial i els automàtics han d'estar amunt.",
+            "Si tot està amunt i continues sense llum, truca'ns."
+          ]
+        },
+        {
+          "id": "cremat",
+          "titol": "Olor de cremat, espurnes o un endoll calent",
+          "icona": "flame",
+          "urgencia": "alta",
+          "servei": "electricitat",
+          "passos": [
+            "No toquis l'endoll ni l'aparell.",
+            "Abaixa l'automàtic d'aquell circuit o l'interruptor general.",
+            "Si hi ha fum o foc, surt i truca al 112.",
+            "Truca'ns i no tornis a connectar el circuit fins que l'hàgim revisat."
+          ]
+        },
+        {
+          "id": "fuita",
+          "titol": "Tinc una fuita d'aigua",
+          "icona": "drop",
+          "urgencia": "alta",
+          "servei": "aigua",
+          "passos": [
+            "Tanca la clau de pas general de l'aigua.",
+            "Si l'aigua arriba a endolls o aparells, abaixa l'interruptor general de la llum.",
+            "Eixuga l'aigua i fes fotos de la zona: ens ajudaran a valorar la reparació.",
+            "Truca'ns per a una reparació urgent."
+          ]
+        },
+        {
+          "id": "gas",
+          "titol": "Fa olor de gas",
+          "icona": "alert",
+          "urgencia": "alta",
+          "servei": "liquids-gasos",
+          "passos": [
+            "No encenguis ni apaguis llums ni aparells elèctrics, i no facis servir el telèfon a dins.",
+            "Obre portes i finestres.",
+            "Tanca la clau del gas.",
+            "Surt de l'habitatge i, des de fora, truca al 112 o al telèfon d'urgències de la teva companyia de gas."
+          ]
+        },
+        {
+          "id": "aire",
+          "titol": "L'aire condicionat no refreda",
+          "icona": "snow",
+          "urgencia": "baixa",
+          "servei": "refrigeracio-climatitzacio",
+          "passos": [
+            "Comprova que el comandament està en mode fred i a una temperatura inferior a la de l'habitació.",
+            "Neteja els filtres de la unitat interior.",
+            "Mira que la unitat exterior no estigui tapada.",
+            "Si continua sense refredar, potser li falta gas o té una avaria: demana'ns una revisió."
+          ]
+        },
+        {
+          "id": "nova",
+          "titol": "Vull una instal·lació nova o una reforma",
+          "icona": "file",
+          "urgencia": "baixa",
+          "servei": "",
+          "passos": [
+            "Explica'ns què vols fer i on.",
+            "Et trucarem per concretar una visita.",
+            "Revisarem l'espai i et farem un pressupost sense compromís."
+          ]
+        }
+      ]
+    },
+    "solar": {
+      "titol": "Calculadora solar",
+      "curt": "Quant podries estalviar amb plaques fotovoltaiques?",
+      "factura": "Quant pagues de llum al mes?",
+      "tipus": "On les instal·laries?",
+      "tipus_casa": "Habitatge",
+      "tipus_empresa": "Empresa o nau",
+      "r_plaques": "Plaques de 450 W",
+      "r_potencia": "Potència",
+      "r_estalvi": "Estalvi anual",
+      "r_amortitzacio": "Amortització",
+      "r_inversio": "Inversió aproximada",
+      "anys": "anys",
+      "per_any": "/any",
+      "avis": "Estimació orientativa per al Penedès (unes 1.450 hores de sol útil a l'any). Cada teulada i cada consum són diferents: demana'ns un estudi personalitzat.",
+      "boto": "Vull un estudi per a casa meva"
+    },
+    "potencia": {
+      "titol": "Calculadora de potència",
+      "curt": "Quina potència elèctrica necessites contractar?",
+      "instruccions": "Marca els aparells que acostumes a fer servir alhora.",
+      "total": "Consum simultani",
+      "recomanada": "Potència recomanada",
+      "avis_trifasica": "Més de 14,49 kW: probablement et cal una instal·lació trifàsica. Consulta'ns.",
+      "avis": "Valors orientatius amb les potències normalitzades en monofàsic (230 V). Si cal ampliar la instal·lació o actualitzar el butlletí, te n'informem.",
+      "boto": "Vull canviar la potència",
+      "aparells": [
+        {
+          "nom": "Llums i petits aparells",
+          "w": 500,
+          "on": true
+        },
+        {
+          "nom": "Nevera i congelador",
+          "w": 300,
+          "on": true
+        },
+        {
+          "nom": "Televisió i ordinador",
+          "w": 300,
+          "on": true
+        },
+        {
+          "nom": "Rentadora",
+          "w": 2000
+        },
+        {
+          "nom": "Rentaplats",
+          "w": 1800
+        },
+        {
+          "nom": "Forn",
+          "w": 2200
+        },
+        {
+          "nom": "Placa d'inducció o vitro",
+          "w": 3500
+        },
+        {
+          "nom": "Microones",
+          "w": 1000
+        },
+        {
+          "nom": "Termo elèctric",
+          "w": 1500
+        },
+        {
+          "nom": "Aire condicionat (1 equip)",
+          "w": 1200
+        },
+        {
+          "nom": "Assecadora",
+          "w": 2500
+        },
+        {
+          "nom": "Planxa o assecador de cabells",
+          "w": 1500
+        },
+        {
+          "nom": "Cotxe elèctric (càrrega lenta)",
+          "w": 3700
+        }
+      ]
+    }
+  }
 }

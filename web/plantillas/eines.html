@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import icon, cta %}
+{% import 'eines-components.html' as eines %}
+{% block contingut %}
+<section class="cap-pagina">
+  <div class="contenidor">
+    <nav class="molles" aria-label="breadcrumb"><a href="{{ url('inici') }}">{{ ui.inici }}</a> / <span>{{ info.titol }}</span></nav>
+    <h1>{{ info.titol }}</h1>
+    <p class="entradeta">{{ info.text }}</p>
+    <ul class="xips">
+      <li><a class="xip" href="#avaries">{{ icon('wrench', 16) }}{{ t.eines.avaries.titol }}</a></li>
+      <li><a class="xip" href="#solar">{{ icon('sun', 16) }}{{ t.eines.solar.titol }}</a></li>
+      <li><a class="xip" href="#potencia">{{ icon('gauge', 16) }}{{ t.eines.potencia.titol }}</a></li>
+    </ul>
+  </div>
+</section>
+<section class="seccio">
+  <div class="contenidor eines-pila">
+    {{ eines.avaries(t, ui, url, comun) }}
+    {{ eines.solar(t, ui, url) }}
+    {{ eines.potencia(t, ui, url) }}
+  </div>
+</section>
+{{ cta(ui, comun, url) }}
+{% endblock %}

@@ -388,20 +388,8 @@ body.menu-obert { overflow: hidden; }
 @media (min-width: 960px) {
   :root { --capcalera: 80px; }
   body { padding-bottom: 0; }
-  .barra-mobil, .menu-boto { display: none; }
+  .barra-mobil { display: none; }
   .logo img { height: 46px; }
-  .menu { position: static; display: flex !important; align-items: center; gap: 28px; padding: 0; overflow: visible; background: none; }
-  .menu ul { display: flex; gap: 4px; }
-  .menu ul li a { border: 0; font-size: 1rem; font-weight: 600; padding: 8px 12px; border-radius: 999px; }
-  .menu ul li a:hover { background: var(--crema); }
-  .menu ul li a[aria-current="page"] { color: var(--vermell); }
-  .menu-accions { flex-direction: row; align-items: center; margin: 0; gap: 16px; }
-  .menu-accions .btn { min-height: 44px; font-size: .95rem; }
-  .telefon-cap { border: 0; min-height: 0; font-size: 1.05rem; }
-  .telefon-cap .icon { color: var(--vermell); }
-  /* escriptori: logo · menú · selector d'idioma */
-  .menu { order: 2; margin-left: auto; }
-  .capcalera-dins > .idiomes { order: 3; margin-left: 0; }
   .hero-dins { padding-top: 110px; padding-bottom: 150px; }
   .hero::before { background: linear-gradient(90deg, rgb(20 18 17 / .85) 0%, rgb(20 18 17 / .55) 55%, rgb(20 18 17 / .2) 100%); }
   .hero-text { font-size: 1.25rem; }
@@ -431,8 +419,217 @@ body.menu-obert { overflow: hidden; }
   .lb-seg { right: 20px; }
 }
 
+/* ================= menú horitzontal (necessita més amplada: 5 seccions + telèfon + botó + idioma) ================= */
+@media (min-width: 1180px) {
+  .menu-boto, .nomes-mobil { display: none; }
+  .menu { position: static; display: flex !important; align-items: center; gap: 22px; padding: 0; overflow: visible; background: none; }
+  .menu ul { display: flex; gap: 2px; }
+  .menu ul li a { border: 0; font-size: .98rem; font-weight: 600; padding: 8px 11px; border-radius: 999px; }
+  .menu ul li a:hover { background: var(--crema); }
+  .menu ul li a[aria-current="page"] { color: var(--vermell); }
+  .menu-accions { flex-direction: row; align-items: center; margin: 0; gap: 14px; }
+  .menu-accions .btn { min-height: 44px; font-size: .95rem; }
+  .telefon-cap { border: 0; min-height: 0; font-size: 1.05rem; }
+  .telefon-cap .icon { color: var(--vermell); }
+  /* logo · menú · selector d'idioma */
+  .menu { order: 2; margin-left: auto; }
+  .capcalera-dins > .idiomes { order: 3; margin-left: 0; }
+}
+
+/* ================= extres: eines, treballs, FAQ i animacions ================= */
+
+/* transicions suaus entre pàgines (navegadors compatibles) */
+@view-transition { navigation: auto; }
+.capcalera { view-transition-name: capcalera; }
+
+/* titular amb paraules que roten */
+.hero-titol { display: block; }
+/* la paraula que rota va en línia pròpia: així "al Penedès" no queda separat per l'amplada de la paraula més llarga */
+.rotador { display: grid; justify-items: start; color: #ff5263; }
+.rot-paraula { grid-area: 1 / 1; opacity: 0; transform: translateY(.45em); transition: opacity .45s, transform .45s; white-space: nowrap; }
+/* la que entra espera que la que surt hagi marxat: mai se sobreposen */
+.rot-paraula.actiu { opacity: 1; transform: none; transition-delay: .25s; }
+.rot-paraula.surt { opacity: 0; transform: translateY(-.45em); transition-duration: .25s; }
+
+/* circuit elèctric del hero */
+.hero-circuit { position: absolute; z-index: -1; top: 0; right: 0; height: 100%; width: 100%; opacity: .45;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 55%); mask-image: linear-gradient(90deg, transparent 0%, #000 55%); }
+.hero-circuit .traca { fill: none; stroke: rgb(255 255 255 / .35); stroke-width: 1.6; stroke-dasharray: 100; stroke-dashoffset: 100; animation: dibuixa 2.4s ease-out forwards; }
+.hero-circuit .pols { fill: none; stroke: #ff3b4f; stroke-width: 3; stroke-linecap: round; stroke-dasharray: 5 95; stroke-dashoffset: 100;
+  filter: drop-shadow(0 0 4px #ff3b4f); animation: corrent 3.2s linear var(--retard, 0s) infinite; opacity: 0; }
+.hero-circuit .node { fill: var(--fosc); stroke: rgb(255 255 255 / .55); stroke-width: 1.6; }
+@keyframes dibuixa { to { stroke-dashoffset: 0; } }
+@keyframes corrent { 0% { stroke-dashoffset: 100; opacity: 0; } 8% { opacity: 1; } 85% { opacity: 1; } 100% { stroke-dashoffset: 0; opacity: 0; } }
+
+/* aparició en fer scroll (només amb JS) */
+.js .revela { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--i, 0) * 70ms); }
+.js .revela.vist { opacity: 1; transform: none; }
+
+/* xips i filtres */
+.xips, .filtres { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.filtres { margin: 0 0 22px; }
+.xip { display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 8px 16px; border-radius: 999px; border: 1.5px solid var(--linia);
+  background: var(--blanc); color: var(--tinta); font: inherit; font-size: .95rem; font-weight: 600; text-decoration: none; cursor: pointer; }
+.xip .icon { color: var(--vermell); }
+.xip:hover { border-color: var(--tinta); color: var(--tinta); }
+.xip[aria-pressed="true"] { background: var(--tinta); border-color: var(--tinta); color: #fff; }
+.xip-n { font-size: .8rem; font-weight: 700; padding: 1px 8px; border-radius: 999px; background: var(--crema); color: var(--suau); }
+.xip[aria-pressed="true"] .xip-n { background: rgb(255 255 255 / .18); color: #fff; }
+.nomes-js { display: none; }
+.js .nomes-js { display: flex; }
+
+/* galeria de treballs */
+.galeria-treballs li[hidden] { display: none; }
+.galeria-treballs a { position: relative; }
+.galeria-etiqueta { position: absolute; left: 8px; bottom: 8px; padding: 3px 10px; border-radius: 999px; font-size: .78rem; font-weight: 700;
+  background: rgb(26 24 23 / .78); color: #fff; opacity: 0; transform: translateY(4px); transition: opacity .2s, transform .2s; }
+.galeria-treballs a:hover .galeria-etiqueta, .galeria-treballs a:focus-visible .galeria-etiqueta { opacity: 1; transform: none; }
+
+/* eines: estructura comuna */
+.seccio-eines { background: linear-gradient(180deg, var(--crema) 0%, var(--blanc) 100%); }
+.eines-pila { display: grid; gap: 28px; }
+.eina { background: var(--blanc); border: 1px solid var(--linia); border-radius: 18px; padding: 20px; box-shadow: var(--ombra); scroll-margin-top: calc(var(--capcalera) + 16px); }
+.eina-cap { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 16px; }
+.eina-cap p { margin: 0; color: var(--suau); }
+.eina-titol { font-size: 1.45rem; margin: 0 0 4px; }
+.eina-icona { display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 14px; flex-shrink: 0;
+  background: var(--tinta); color: #fff; }
+.eina-icona-sol { background: linear-gradient(135deg, #ffb703, #fb8500); }
+.eina-avis { font-size: .88rem; color: var(--suau); margin: 16px 0; }
+.eina-alerta { margin: 14px 0 0; padding: 12px 14px; border-radius: var(--radi-petit); background: #fff1b8; color: #5a4300; font-weight: 600; }
+.avaries-pregunta { font-weight: 700; color: var(--tinta); margin-bottom: 10px; }
+.btn-text { background: none; border: 0; padding: 8px 4px; font: inherit; font-weight: 700; color: var(--suau); text-decoration: underline; cursor: pointer; }
+
+/* assistent d'avaries */
+.avaries-opcions { display: grid; gap: 8px; grid-template-columns: 1fr; }
+.avaria-opcio { display: flex; align-items: center; gap: 12px; min-height: 56px; padding: 10px 14px; border-radius: 12px; border: 1.5px solid var(--linia);
+  background: var(--blanc); color: var(--tinta); font-weight: 600; text-decoration: none; transition: border-color .15s, box-shadow .15s, transform .15s; }
+.avaria-opcio:hover { border-color: var(--tinta); color: var(--tinta); transform: translateY(-1px); }
+.avaria-opcio[aria-expanded="true"] { border-color: var(--vermell); box-shadow: 0 0 0 3px rgb(226 0 21 / .12); }
+.ao-icona { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 10px; background: var(--crema); color: var(--tinta); flex-shrink: 0; }
+.urg-alta .ao-icona { background: #fde8ea; color: var(--vermell); }
+.ao-text { flex: 1; line-height: 1.3; }
+.ao-urg { font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; color: var(--vermell-fosc); background: #fde8ea; padding: 3px 8px; border-radius: 999px; }
+.avaria-resultat { margin-top: 16px; padding: 18px; border-radius: 14px; background: var(--crema); border-left: 5px solid #8a817b; outline: none; scroll-margin-top: calc(var(--capcalera) + 16px); }
+.avaria-resultat.urg-alta { background: #fff4f5; border-left-color: var(--vermell); }
+.avaria-resultat.urg-mitja { border-left-color: #f2a000; }
+.avaria-resultat.urg-baixa { border-left-color: #2e9e5b; }
+.js .avaria-resultat:not(.actiu) { display: none; }
+.js .avaria-resultat.actiu { animation: apareix .35s ease; }
+@keyframes apareix { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.ar-cap { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 8px; }
+.ar-cap h3 { margin: 4px 0 0; font-size: 1.2rem; }
+.ar-icona { display: inline-flex; align-items: center; justify-content: center; width: 46px; height: 46px; border-radius: 12px; background: var(--blanc); color: var(--tinta); flex-shrink: 0; }
+.urg-alta .ar-icona { color: var(--vermell); }
+.urg-etiqueta { display: inline-block; font-size: .75rem; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; padding: 3px 10px; border-radius: 999px; background: #e9e4de; color: var(--text); }
+.urg-alta .urg-etiqueta { background: var(--vermell); color: #fff; }
+.urg-mitja .urg-etiqueta { background: #ffe3a3; color: #5a4300; }
+.urg-baixa .urg-etiqueta { background: #d9f2e3; color: #17603a; }
+.avaria-resultat h4 { font-size: .85rem; text-transform: uppercase; letter-spacing: .08em; color: var(--suau); margin: 14px 0 8px; }
+.ar-passos { counter-reset: pas; display: grid; gap: 10px; margin-bottom: 18px; }
+.ar-passos li { counter-increment: pas; position: relative; padding-left: 40px; min-height: 28px; }
+.ar-passos li::before { content: counter(pas); position: absolute; left: 0; top: -1px; width: 28px; height: 28px; border-radius: 50%;
+  background: var(--tinta); color: #fff; font-weight: 800; font-size: .85rem; display: flex; align-items: center; justify-content: center; }
+.urg-alta .ar-passos li::before { background: var(--vermell); }
+.avaria-resultat .botons .btn { flex: 1 1 200px; }
+
+/* targetes d'eina (portada i lateral) */
+.eines-inici { display: grid; gap: 20px; align-items: start; }
+.eines-calculadores { display: grid; gap: 16px; }
+.eina-targeta { display: block; padding: 22px; border-radius: 18px; background: var(--tinta); color: rgb(255 255 255 / .82); text-decoration: none;
+  transition: transform .2s, box-shadow .2s; }
+.eina-targeta:hover { color: rgb(255 255 255 / .9); transform: translateY(-3px); box-shadow: var(--ombra); }
+.eina-targeta h3 { color: #fff; margin: 14px 0 6px; }
+.eina-targeta .eina-icona { background: var(--vermell); }
+.eina-targeta .eina-icona-sol { background: linear-gradient(135deg, #ffb703, #fb8500); }
+.eina-targeta .enllac-fletxa { color: #fff; }
+.eina-targeta-petita { display: flex; gap: 14px; align-items: flex-start; padding: 18px; font-size: .95rem; line-height: 1.45; }
+.eina-targeta-petita strong { color: #fff; font-size: 1.05rem; }
+.eina-targeta-petita .eina-icona { width: 44px; height: 44px; }
+.eina-servei { margin: 28px 0 8px; }
+
+/* resultats (solar i potència) */
+.resultats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 0; }
+.resultat { background: var(--crema); border-radius: 12px; padding: 12px 14px; }
+.resultat dt { font-size: .8rem; color: var(--suau); font-weight: 600; }
+.resultat dd { margin: 2px 0 0; font-size: 1.35rem; font-weight: 800; color: var(--tinta); letter-spacing: -.01em; font-variant-numeric: tabular-nums; }
+.resultat-gran { grid-column: 1 / -1; background: var(--tinta); }
+.resultat-gran dt { color: rgb(255 255 255 / .75); }
+.resultat-gran dd { color: #fff; font-size: 2rem; }
+.eina-solar .resultat-gran { background: linear-gradient(135deg, #1f8f4e, #146b39); }
+
+/* calculadora solar */
+.solar-graella { display: grid; gap: 20px; }
+.segmentat { border: 0; padding: 0; margin: 0 0 16px; display: flex; flex-wrap: wrap; gap: 6px; }
+.segmentat legend { font-weight: 700; color: var(--tinta); margin-bottom: 8px; padding: 0; }
+.segmentat label { position: relative; }
+.segmentat input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+.segmentat span { display: inline-flex; align-items: center; min-height: 42px; padding: 8px 16px; border-radius: 999px; border: 1.5px solid var(--linia); font-weight: 600; cursor: pointer; }
+.segmentat input:checked + span { background: var(--tinta); color: #fff; border-color: var(--tinta); }
+.segmentat input:focus-visible + span { outline: 3px solid var(--vermell); outline-offset: 2px; }
+.rang-etiqueta { display: block; font-weight: 700; color: var(--tinta); margin-bottom: 6px; }
+.rang { display: flex; align-items: center; gap: 14px; }
+.rang input[type="range"] { flex: 1; accent-color: var(--vermell); height: 32px; }
+.rang output { min-width: 84px; text-align: right; font-size: 1.5rem; font-weight: 800; color: var(--tinta); font-variant-numeric: tabular-nums; }
+.plaques-visual { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 16px; min-height: 30px; }
+.placa { width: 22px; height: 30px; border-radius: 3px; background:
+  linear-gradient(90deg, transparent 48%, rgb(255 255 255 / .35) 48% 52%, transparent 52%),
+  linear-gradient(0deg, transparent 31%, rgb(255 255 255 / .35) 31% 35%, transparent 35% 64%, rgb(255 255 255 / .35) 64% 68%, transparent 68%),
+  linear-gradient(160deg, #3b5b8c, #1d3557); animation: placa .3s ease both; }
+.plaques-mes { align-self: center; font-weight: 800; color: var(--suau); margin-left: 4px; }
+@keyframes placa { from { opacity: 0; transform: scale(.6); } to { opacity: 1; transform: none; } }
+
+/* calculadora de potència */
+.aparells { display: grid; gap: 8px; grid-template-columns: 1fr; margin-bottom: 18px; }
+.aparell { display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 10px 14px; border-radius: 12px; border: 1.5px solid var(--linia); cursor: pointer; position: relative; }
+.aparell input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.ap-check { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 7px; border: 2px solid #cfc7c0; color: transparent; flex-shrink: 0; }
+.aparell input:checked ~ .ap-check { background: var(--vermell); border-color: var(--vermell); color: #fff; }
+.aparell:has(input:checked) { border-color: var(--tinta); background: var(--crema); }
+.aparell input:focus-visible ~ .ap-check { outline: 3px solid var(--vermell); outline-offset: 2px; }
+.ap-nom { flex: 1; font-weight: 600; color: var(--tinta); line-height: 1.3; }
+.ap-w { font-size: .85rem; color: var(--suau); font-variant-numeric: tabular-nums; }
+.trams { margin-top: 18px; }
+.trams-barra { height: 14px; border-radius: 999px; background: var(--crema); overflow: hidden; }
+.trams-ple { display: block; height: 100%; width: 0; border-radius: 999px; background: linear-gradient(90deg, #2e9e5b, #f2a000 60%, var(--vermell)); transition: width .4s ease; }
+.trams-marques { display: flex; justify-content: space-between; margin-top: 6px; font-size: .72rem; color: var(--suau); font-variant-numeric: tabular-nums; }
+.trams-marques li.actiu { color: var(--vermell-fosc); font-weight: 800; }
+
+/* preguntes freqüents */
+.faq-graella { display: grid; gap: 8px; }
+.faq details { border-bottom: 1px solid var(--linia); }
+.faq summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 0; cursor: pointer; list-style: none;
+  font-weight: 700; font-size: 1.08rem; color: var(--tinta); }
+.faq summary::-webkit-details-marker { display: none; }
+.faq-icona { display: inline-flex; width: 34px; height: 34px; border-radius: 50%; align-items: center; justify-content: center; background: var(--crema); color: var(--vermell); flex-shrink: 0; transition: transform .25s; }
+.faq details[open] .faq-icona { transform: rotate(45deg); background: var(--vermell); color: #fff; }
+.faq details p { margin: 0 0 18px; color: var(--suau); max-width: 65ch; }
+
+@media (min-width: 640px) {
+  .avaries-opcions { grid-template-columns: 1fr 1fr; }
+  .aparells { grid-template-columns: 1fr 1fr; }
+  .resultats { grid-template-columns: repeat(2, 1fr); }
+  .eina { padding: 28px; }
+  .galeria-treballs { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 960px) {
+  .eines-inici { grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: 28px; }
+  .solar-graella { grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+  .galeria-treballs { grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .faq-graella { grid-template-columns: 1fr 2fr; gap: 48px; }
+  .eina-titol { font-size: 1.6rem; }
+}
+@media (max-width: 639px) {
+  .hero-circuit { opacity: .3; }
+  .resultat-gran dd { font-size: 1.7rem; }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; }
+  *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; animation: none !important; }
+  .hero-circuit .traca { stroke-dashoffset: 0; }
+  .js .revela { opacity: 1; transform: none; }
+  .rot-paraula { transition: none; }
+  @view-transition { navigation: none; }
 }
 
 @media print {

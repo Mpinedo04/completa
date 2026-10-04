@@ -15,7 +15,7 @@ python -m http.server 8080 --directory web/dist   # ver en http://localhost:8080
 En local el formulario muestra "modo demostración", porque no hay PHP.
 
 **Boceto (esbós):**
-- **Contenido:** portada, Il·luminació, contacto, solicitar servicio y una página "Disponible a la versió completa", en catalán y castellano (10 páginas).
+- **Contenido:** portada, Il·luminació, Treballs, Eines, contacto, solicitar servicio y una página "Disponible a la versió completa", en catalán y castellano (14 páginas).
 - **Marcado como propuesta:** banda amarilla "no és la web oficial", `[Esbós]` en el título, `noindex` y `robots.txt` que bloquea a Google.
 - **Sin backend:** sin PHP ni `.htaccess`; el formulario siempre está en modo demostración.
 - **Se abre con doble clic** en `index.html`, sin servidor.
@@ -29,7 +29,9 @@ En local el formulario muestra "modo demostración", porque no hay PHP.
 | Textos en catalán / castellano | `contenido/ca.json`, `contenido/es.json` |
 | Estructura HTML | `plantillas/*.html` |
 | Estilos | `static/css/estil.css` |
-| Menú, galería, formularios | `static/js/main.js` |
+| Menú, galería, formularios, herramientas (asistente de averías, calculadoras) y animaciones | `static/js/main.js` |
+| Supuestos de la calculadora solar (precio kWh, horas de sol, €/kWp) | objeto `SOLAR` en `static/js/main.js` |
+| Textos del asistente, calculadoras y preguntas frecuentes | `eines` y `faq` en `contenido/ca.json` / `es.json` |
 | Envío del formulario (destinatario, remitente) | `static/php/enviar.php` |
 | Redirecciones, caché, HTTPS | `static/htaccess.txt` (se publica como `.htaccess`) |
 

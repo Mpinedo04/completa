@@ -29,7 +29,7 @@ BOCETO = "--boceto" in sys.argv
 DIST = WEB / ("dist-boceto" if BOCETO else "dist")
 IDIOMAS_BUILD = ["ca", "es"]
 # páginas que entran en el esbós; el resto de enlaces lleva a pendent.html
-PAGINAS_BOCETO = {"inici", "servei:illuminacio", "contacte", "pressupost", "pendent"}
+PAGINAS_BOCETO = {"inici", "servei:illuminacio", "treballs", "eines", "contacte", "pressupost", "pendent"}
 
 # tamaños de imagen: (ancho, alto) -> recorte exacto; (ancho, None) -> máx. ancho sin recortar
 TAMANOS = {
@@ -64,8 +64,9 @@ class Imagenes:
     def __init__(self):
         self.hechas = {}
 
-    def __call__(self, origen, tipo="card"):
-        clave = (origen, tipo)
+    def __call__(self, origen, tipo="card", foco=None):
+        """foco: (x, y) entre 0 y 1, punto que se conserva al recortar (por defecto, el centro)."""
+        clave = (origen, tipo, tuple(foco) if foco else None)
         if clave in self.hechas:
             return self.hechas[clave]
         ruta = ORIG / "imagenes" / origen
@@ -78,7 +79,7 @@ class Imagenes:
         im = im.convert("RGB")
         ancho, alto = TAMANOS[tipo]
         if ancho and alto:
-            im = ImageOps.fit(im, (ancho, alto), Image.LANCZOS)
+            im = ImageOps.fit(im, (ancho, alto), Image.LANCZOS, centering=tuple(foco) if foco else (0.5, 0.5))
         elif ancho and im.width > ancho:
             im = im.resize((ancho, round(im.height * ancho / im.width)), Image.LANCZOS)
         im.save(destino, "WEBP", quality=80, method=6)
@@ -103,6 +104,8 @@ def paginas(comun):
         ("inici", "inici.html", "index.html"),
         ("serveis", "serveis.html", "serveis.html"),
         ("experiencia", "experiencia.html", "experiencia.html"),
+        ("treballs", "treballs.html", "treballs.html"),
+        ("eines", "eines.html", "eines.html"),
         ("contacte", "contacte.html", "contacte.html"),
         ("pressupost", "pressupost.html", "sollicitar-servei.html"),
         ("avis-legal", "legal.html", "avis-legal.html"),
@@ -118,6 +121,7 @@ def paginas(comun):
 
 
 RUTAS = {"inici": "index.html", "serveis": "serveis.html", "experiencia": "experiencia.html",
+         "treballs": "treballs.html", "eines": "eines.html",
          "contacte": "contacte.html", "pressupost": "sollicitar-servei.html",
          "avis-legal": "avis-legal.html", "privacitat": "privacitat.html"}
 

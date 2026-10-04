@@ -17,6 +17,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.documentElement.classList.add('js')</script>
   <title>{% if boceto %}[{{ ui.esbos_titol }}] {% endif %}{% block title %}{{ info.title }}{% endblock %}</title>
   {% if info.description is defined %}<meta name="description" content="{{ info.description }}">{% endif %}
   {% if indexable %}
@@ -63,8 +64,10 @@
       <nav class="menu" id="menu" aria-label="{{ ui.menu }}">
         <ul>
           {% set seccio = clave.split(':')[0] %}
-          <li><a href="{{ url('inici') }}"{% if seccio == 'inici' %} aria-current="page"{% endif %}>{{ ui.inici }}</a></li>
+          <li class="nomes-mobil"><a href="{{ url('inici') }}"{% if seccio == 'inici' %} aria-current="page"{% endif %}>{{ ui.inici }}</a></li>
           <li><a href="{{ url('serveis') }}"{% if seccio in ('serveis', 'servei') %} aria-current="page"{% endif %}>{{ ui.serveis }}</a></li>
+          <li><a href="{{ url('treballs') }}"{% if seccio == 'treballs' %} aria-current="page"{% endif %}>{{ ui.treballs_nav }}</a></li>
+          <li><a href="{{ url('eines') }}"{% if seccio == 'eines' %} aria-current="page"{% endif %}>{{ ui.eines_nav }}</a></li>
           <li><a href="{{ url('experiencia') }}"{% if seccio == 'experiencia' %} aria-current="page"{% endif %}>{{ ui.experiencia }}</a></li>
           <li><a href="{{ url('contacte') }}"{% if seccio == 'contacte' %} aria-current="page"{% endif %}>{{ ui.contacte }}</a></li>
         </ul>
@@ -105,6 +108,8 @@
         <h2 class="peu-titol">{{ ui.seccions }}</h2>
         <ul class="peu-llista peu-links">
           <li><a href="{{ url('inici') }}">{{ ui.inici }}</a></li>
+          <li><a href="{{ url('treballs') }}">{{ ui.treballs_nav }}</a></li>
+          <li><a href="{{ url('eines') }}">{{ ui.eines_nav }}</a></li>
           <li><a href="{{ url('experiencia') }}">{{ ui.experiencia }}</a></li>
           <li><a href="{{ url('pressupost') }}">{{ ui.pressupost }}</a></li>
           <li><a href="{{ url('contacte') }}">{{ ui.contacte }}</a></li>

@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.documentElement.classList.add('js')</script>
   <title>Sol·licita un servei o pressupost · Electricitat Samsó</title>
 <meta name="description" content="Tens una avaria o necessites una instal·lació? Omple el formulari, indica el dia que et va bé i et trucarem. Sense compromís.">  <link rel="canonical" href="https://electricitatsamso.com/sollicitar-servei.html">
   <link rel="alternate" hreflang="ca" href="https://electricitatsamso.com/sollicitar-servei.html">
@@ -18,7 +19,7 @@
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="img/favicon-32.png" type="image/png">
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-  <link rel="stylesheet" href="css/estil.css?v=855da5d7">
+  <link rel="stylesheet" href="css/estil.css?v=0457701a">
 </head>
 <body class="pag-pressupost">
   <a class="saltar" href="#contingut">Salta al contingut</a>
@@ -39,8 +40,10 @@
       </button>
       <nav class="menu" id="menu" aria-label="Menú">
         <ul>
-          <li><a href="./">Inici</a></li>
+          <li class="nomes-mobil"><a href="./">Inici</a></li>
           <li><a href="serveis.html">Serveis</a></li>
+          <li><a href="treballs.html">Treballs</a></li>
+          <li><a href="eines.html">Eines</a></li>
           <li><a href="experiencia.html">Experiència</a></li>
           <li><a href="contacte.html">Contacte</a></li>
         </ul>
@@ -91,7 +94,7 @@
       <label for="servei-servei">Servei</label>
       <select id="servei-servei" name="servei">
         <option value="">Tria un servei…</option>
-<option>Electricitat</option><option>Aigua</option><option>Líquids i gasos</option><option>Refrigeració i climatització</option><option>Energies renovables</option><option>Il·luminació</option><option>Extintors</option><option>Manteniment</option>        <option>Altres / no ho sé</option>
+<option data-slug="electricitat">Electricitat</option><option data-slug="aigua">Aigua</option><option data-slug="liquids-gasos">Líquids i gasos</option><option data-slug="refrigeracio-climatitzacio">Refrigeració i climatització</option><option data-slug="energies-renovables">Energies renovables</option><option data-slug="illuminacio">Il·luminació</option><option data-slug="extintors">Extintors</option><option data-slug="manteniment">Manteniment</option>        <option>Altres / no ho sé</option>
       </select>
     </div>
     <div class="camp">
@@ -153,6 +156,8 @@
         <h2 class="peu-titol">Seccions</h2>
         <ul class="peu-llista peu-links">
           <li><a href="./">Inici</a></li>
+          <li><a href="treballs.html">Treballs</a></li>
+          <li><a href="eines.html">Eines</a></li>
           <li><a href="experiencia.html">Experiència</a></li>
           <li><a href="sollicitar-servei.html">Demana pressupost</a></li>
           <li><a href="contacte.html">Contacte</a></li>
@@ -186,6 +191,6 @@
     <button class="lb-boto lb-seg" type="button" data-lightbox-seg aria-label="Següent"><svg class="icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
   </dialog>
 
-  <script src="js/main.js?v=855da5d7" defer></script>
+  <script src="js/main.js?v=0457701a" defer></script>
 </body>
 </html>

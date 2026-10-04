@@ -16,11 +16,11 @@
   "fundacio": 1960,
   "hero": "_content/index/slider/940x350-4.jpg",
   "serveis": [
-    { "slug": "electricitat", "portada": "_content/portfolio/electricitat/electricitat1.jpg" },
+    { "slug": "electricitat", "eina": "potencia", "portada": "_content/portfolio/electricitat/electricitat1.jpg" },
     { "slug": "aigua", "portada": "_content/portfolio/aigua/aigua1.jpg" },
     { "slug": "liquids-gasos", "portada": "_content/portfolio/liquidsgasos/liquids_gasos1.jpg" },
-    { "slug": "refrigeracio-climatitzacio", "portada": "_content/portfolio/climatitzacio/climatitzacio4.jpg" },
-    { "slug": "energies-renovables", "portada": "_content/portfolio/energies/energies1.jpg" },
+    { "slug": "refrigeracio-climatitzacio", "foco": [0.92, 0.5], "portada": "_content/index/slider/940x350-6.jpg" },
+    { "slug": "energies-renovables", "eina": "solar", "portada": "_content/portfolio/energies/energies1.jpg" },
     { "slug": "illuminacio", "portada": "_content/portfolio/illuminacio/illuminacio17.jpg" },
     { "slug": "extintors", "portada": "_content/portfolio/extintors/extintors2.jpg" },
     { "slug": "manteniment", "portada": "_content/portfolio/manteniment/1.jpg" }

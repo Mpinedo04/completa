@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import icon, cta %}
+{% block contingut %}
+<section class="cap-pagina">
+  <div class="contenidor">
+    <nav class="molles" aria-label="breadcrumb"><a href="{{ url('inici') }}">{{ ui.inici }}</a> / <span>{{ info.titol }}</span></nav>
+    <h1>{{ info.titol }}</h1>
+    <p class="entradeta">{{ info.text }}</p>
+  </div>
+</section>
+<section class="seccio">
+  <div class="contenidor">
+    {% set total = namespace(n=0) %}
+    {% for s in comun.serveis %}{% set total.n = total.n + galerias[s.slug] | length %}{% endfor %}
+    <div class="filtres nomes-js" role="group" aria-label="{{ ui.treballs }}" data-filtres>
+      <button class="xip" type="button" data-filtre="tots" aria-pressed="true">{{ ui.filtre_tots }} <span class="xip-n">{{ total.n }}</span></button>
+      {% for s in comun.serveis if galerias[s.slug] %}
+      <button class="xip" type="button" data-filtre="{{ s.slug }}" aria-pressed="false">{{ t.serveis[s.slug].nom }} <span class="xip-n">{{ galerias[s.slug] | length }}</span></button>
+      {% endfor %}
+    </div>
+    <ul class="galeria galeria-treballs" data-galeria-filtrable>
+      {% for s in comun.serveis %}
+      {% for f in galerias[s.slug] %}
+      {% set mini = img(f.foto, 'thumb') %}{% set gran = img(f.foto, 'full') %}
+      <li data-cat="{{ s.slug }}">
+        <a href="{{ asset(gran.src) }}" data-lightbox="treballs" data-w="{{ gran.w }}" data-h="{{ gran.h }}">
+          <img src="{{ asset(mini.src) }}" width="{{ mini.w }}" height="{{ mini.h }}" alt="{{ t.serveis[s.slug].nom }} – {{ ui.foto | lower }} {{ loop.index }}" loading="lazy">
+          <span class="galeria-etiqueta">{{ t.serveis[s.slug].nom }}</span>
+        </a>
+      </li>
+      {% endfor %}
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{{ cta(ui, comun, url) }}
+{% endblock %}

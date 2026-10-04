@@ -1,7 +1,7 @@
 {% from 'macros.html' import icon %}
 <ul class="targetes">
   {% for s in comun.serveis if s.slug != servei %}
-  {% set st = t.serveis[s.slug] %}{% set im = img(s.portada, 'card') %}
+  {% set st = t.serveis[s.slug] %}{% set im = img(s.portada, 'card', s.foco if s.foco is defined else none) %}
   <li class="targeta">
     <img src="{{ asset(im.src) }}" width="{{ im.w }}" height="{{ im.h }}" alt="" loading="lazy">
     <div class="targeta-cos">

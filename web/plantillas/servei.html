@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 {% from 'macros.html' import icon, cta %}
+{% import 'eines-components.html' as eines %}
 {% block contingut %}
-{% set portada = (comun.serveis | selectattr('slug', 'equalto', servei) | first).portada %}
+{% set s_info = comun.serveis | selectattr('slug', 'equalto', servei) | first %}
+{% set portada = s_info.portada %}
 {% set h = img(portada, 'full') %}
 <section class="cap-pagina cap-servei">
   <img class="cap-fons" src="{{ asset(h.src) }}" width="{{ h.w }}" height="{{ h.h }}" alt="" fetchpriority="high">
@@ -20,6 +22,12 @@
       <ul class="llista-check">
         {% for item in info.llista %}<li>{{ icon('check', 20) }}<span>{{ item }}</span></li>{% endfor %}
       </ul>
+
+      {% if s_info.eina is defined %}
+      <div class="eina-servei">
+        {% if s_info.eina == 'solar' %}{{ eines.solar(t, ui, url, 'h3') }}{% else %}{{ eines.potencia(t, ui, url, 'h3') }}{% endif %}
+      </div>
+      {% endif %}
 
       {% set fotos = galerias[servei] %}
       {% if fotos %}
@@ -44,6 +52,10 @@
         <a class="btn btn-primari btn-bloc" href="tel:{{ comun.telefon_link }}">{{ icon('phone', 18) }}<span>{{ comun.telefon }}</span></a>
         <a class="btn btn-contorn btn-bloc" href="{{ url('pressupost') }}">{{ ui.pressupost }}</a>
       </div>
+      <a class="eina-targeta eina-targeta-petita" href="{{ url('eines') }}#avaries">
+        <span class="eina-icona">{{ icon('wrench', 22) }}</span>
+        <span><strong>{{ t.eines.avaries.titol }}</strong><br>{{ t.eines.avaries.curt }}</span>
+      </a>
       <nav class="altres-serveis" aria-label="{{ ui.altres_serveis }}">
         <h2>{{ ui.altres_serveis }}</h2>
         <ul>

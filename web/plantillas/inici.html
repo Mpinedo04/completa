@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% from 'macros.html' import icon, cta %}
+{% import 'eines-components.html' as eines %}
 {% set p = t.paginas.inici %}
 {% block cap %}
   {% set h = img(comun.hero, 'hero') %}
@@ -9,13 +10,38 @@
 {% set h = img(comun.hero, 'hero') %}
 <section class="hero">
   <img class="hero-fons" src="{{ asset(h.src) }}" alt="" width="{{ h.w }}" height="{{ h.h }}" fetchpriority="high">
+  {# circuit elèctric decoratiu: traces que es dibuixen i polsos de corrent que hi circulen #}
+  <svg class="hero-circuit" viewBox="0 0 600 420" preserveAspectRatio="xMaxYMid slice" aria-hidden="true" focusable="false">
+    {% set traces = [
+      'M600 70 H470 L430 110 H300 L260 70 H120',
+      'M600 160 H520 L480 200 H360 L330 230 H180',
+      'M600 270 H440 L400 230 H250',
+      'M600 350 H500 L460 390 H280 L240 350 H90',
+      'M380 0 V40 L410 70',
+      'M330 420 V330 L300 300 V230'
+    ] %}
+    {% for d in traces %}
+    <path class="traca" d="{{ d }}" pathLength="100"/>
+    <path class="pols" d="{{ d }}" pathLength="100" style="--retard: {{ loop.index0 * 0.7 }}s"/>
+    {% endfor %}
+    {% for c in [(120,70),(180,230),(250,230),(90,350),(410,70),(300,230),(470,70),(480,200),(460,390)] %}
+    <circle class="node" cx="{{ c[0] }}" cy="{{ c[1] }}" r="5"/>
+    {% endfor %}
+  </svg>
   <div class="contenidor hero-dins">
     <p class="etiqueta">{{ p.hero_etiqueta }}</p>
-    <h1>{{ p.hero_titol }}</h1>
+    <h1>
+      <span class="sr">{{ p.hero_titol }}</span>
+      <span class="hero-titol" aria-hidden="true">
+        {{ p.hero_prefix }}
+        <span class="rotador" data-rotador>{% for w in p.hero_rotador %}<span class="rot-paraula{% if loop.first %} actiu{% endif %}">{{ w }}</span>{% endfor %}</span>
+        {{ p.hero_sufix }}
+      </span>
+    </h1>
     <p class="hero-text">{{ p.hero_text }}</p>
     <div class="botons">
       <a class="btn btn-primari btn-gran" href="tel:{{ comun.telefon_link }}">{{ icon('phone', 20) }}<span>{{ ui.trucar_llarg }} · {{ comun.telefon }}</span></a>
-      <a class="btn btn-contorn-blanc btn-gran" href="{{ url('pressupost') }}">{{ ui.pressupost }}</a>
+      <a class="btn btn-contorn-blanc btn-gran" href="#avaries">{{ icon('wrench', 20) }}<span>{{ t.eines.avaries.titol }}</span></a>
     </div>
   </div>
 </section>
@@ -24,7 +50,7 @@
   <div class="contenidor">
     <ul class="xifres-llista">
       {% for x in p.xifres %}
-      <li><strong>{{ x.num }}</strong><span>{{ x.text }}</span></li>
+      <li><strong data-compta="{{ x.num }}">{{ x.num }}</strong><span>{{ x.text }}</span></li>
       {% endfor %}
     </ul>
   </div>
@@ -37,6 +63,32 @@
       <p>{{ p.serveis_text }}</p>
     </div>
     {% include 'targetes-serveis.html' %}
+  </div>
+</section>
+
+<section class="seccio seccio-eines">
+  <div class="contenidor">
+    <div class="seccio-cap">
+      <h2>{{ p.eines_titol }}</h2>
+      <p>{{ p.eines_text }}</p>
+    </div>
+    <div class="eines-inici">
+      {{ eines.avaries(t, ui, url, comun, 'h3') }}
+      <div class="eines-calculadores">
+        <a class="eina-targeta" href="{{ url('eines') }}#solar">
+          <span class="eina-icona eina-icona-sol">{{ icon('sun', 26) }}</span>
+          <h3>{{ t.eines.solar.titol }}</h3>
+          <p>{{ t.eines.solar.curt }}</p>
+          <span class="enllac-fletxa">{{ ui.obrir_eina }} {{ icon('arrow', 16) }}</span>
+        </a>
+        <a class="eina-targeta" href="{{ url('eines') }}#potencia">
+          <span class="eina-icona">{{ icon('gauge', 26) }}</span>
+          <h3>{{ t.eines.potencia.titol }}</h3>
+          <p>{{ t.eines.potencia.curt }}</p>
+          <span class="enllac-fletxa">{{ ui.obrir_eina }} {{ icon('arrow', 16) }}</span>
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -93,11 +145,32 @@
       </li>
       {% endfor %}
     </ul>
-    <p class="centrat"><a class="btn btn-contorn-blanc" href="{{ url('serveis') }}">{{ ui.tots_serveis }}</a></p>
+    <p class="centrat"><a class="btn btn-contorn-blanc" href="{{ url('treballs') }}">{{ icon('image', 18) }}<span>{{ ui.veure_treballs }}</span></a></p>
   </div>
 </section>
 
-<section class="seccio seccio-petita">
+<section class="seccio">
+  <div class="contenidor faq-graella">
+    <div class="seccio-cap">
+      <h2>{{ p.faq_titol }}</h2>
+    </div>
+    <div class="faq">
+      {% for q in t.faq %}
+      <details{% if loop.first %} open{% endif %}>
+        <summary>{{ q.p }}<span class="faq-icona" aria-hidden="true">{{ icon('plus', 20) }}</span></summary>
+        <p>{{ q.r }}</p>
+      </details>
+      {% endfor %}
+    </div>
+  </div>
+  {% if not boceto %}
+  {% set preguntes = [] %}
+  {% for q in t.faq %}{% set _ = preguntes.append({"@type": "Question", "name": q.p, "acceptedAnswer": {"@type": "Answer", "text": q.r}}) %}{% endfor %}
+  <script type="application/ld+json">{{ {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": preguntes} | tojson }}</script>
+  {% endif %}
+</section>
+
+<section class="seccio seccio-petita seccio-crema">
   <div class="contenidor associacions">
     <h2 class="associacions-titol">{{ ui.membres }}</h2>
     <ul>

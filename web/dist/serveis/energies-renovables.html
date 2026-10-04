@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.documentElement.classList.add('js')</script>
   <title>Plaques solars i fotovoltaiques al Penedès · Electricitat Samsó</title>
 <meta name="description" content="Instal·lació de plaques fotovoltaiques i plaques solars per a particulars i empreses a Sant Sadurní d&#39;Anoia i el Penedès.">  <link rel="canonical" href="https://electricitatsamso.com/serveis/energies-renovables.html">
   <link rel="alternate" hreflang="ca" href="https://electricitatsamso.com/serveis/energies-renovables.html">
@@ -18,7 +19,7 @@
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="icon" href="../img/favicon-32.png" type="image/png">
   <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
-  <link rel="stylesheet" href="../css/estil.css?v=855da5d7">
+  <link rel="stylesheet" href="../css/estil.css?v=0457701a">
 </head>
 <body class="pag-servei">
   <a class="saltar" href="#contingut">Salta al contingut</a>
@@ -39,8 +40,10 @@
       </button>
       <nav class="menu" id="menu" aria-label="Menú">
         <ul>
-          <li><a href="../">Inici</a></li>
+          <li class="nomes-mobil"><a href="../">Inici</a></li>
           <li><a href="../serveis.html" aria-current="page">Serveis</a></li>
+          <li><a href="../treballs.html">Treballs</a></li>
+          <li><a href="../eines.html">Eines</a></li>
           <li><a href="../experiencia.html">Experiència</a></li>
           <li><a href="../contacte.html">Contacte</a></li>
         </ul>
@@ -69,6 +72,38 @@
       <h2>Què fem</h2>
       <ul class="llista-check">
 <li><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Plaques solars fotovoltaiques</span></li><li><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Plaques solars tèrmiques</span></li><li><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Instal·lacions per a habitatges</span></li><li><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Instal·lacions per a empreses i naus</span></li><li><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Assessorament per triar la instal·lació adequada</span></li>      </ul>
+
+      <div class="eina-servei">
+<div class="eina eina-solar" id="solar" data-solar data-anys="anys" data-per-any="/any">
+  <div class="eina-cap">
+    <span class="eina-icona eina-icona-sol"><svg class="icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></span>
+    <div><h3 class="eina-titol">Calculadora solar</h3><p>Quant podries estalviar amb plaques fotovoltaiques?</p></div>
+  </div>
+  <div class="solar-graella">
+    <div class="solar-controls">
+      <fieldset class="segmentat">
+        <legend>On les instal·laries?</legend>
+        <label><input type="radio" name="solar-tipus" value="casa" checked><span>Habitatge</span></label>
+        <label><input type="radio" name="solar-tipus" value="empresa"><span>Empresa o nau</span></label>
+      </fieldset>
+      <label class="rang-etiqueta" for="solar-factura">Quant pagues de llum al mes?</label>
+      <div class="rang">
+        <input id="solar-factura" type="range" min="30" max="400" step="5" value="90" data-solar-factura>
+        <output for="solar-factura" data-solar-factura-out>90 €</output>
+      </div>
+      <div class="plaques-visual" data-solar-plaques aria-hidden="true"></div>
+    </div>
+    <dl class="resultats" aria-live="polite">
+      <div class="resultat resultat-gran"><dt>Estalvi anual</dt><dd data-r="estalvi">–</dd></div>
+      <div class="resultat"><dt>Plaques de 450 W</dt><dd data-r="plaques">–</dd></div>
+      <div class="resultat"><dt>Potència</dt><dd data-r="potencia">–</dd></div>
+      <div class="resultat"><dt>Inversió aproximada</dt><dd data-r="inversio">–</dd></div>
+      <div class="resultat"><dt>Amortització</dt><dd data-r="amortitzacio">–</dd></div>
+    </dl>
+  </div>
+  <p class="eina-avis">Estimació orientativa per al Penedès (unes 1.450 hores de sol útil a l&#39;any). Cada teulada i cada consum són diferents: demana&#39;ns un estudi personalitzat.</p>
+  <a class="btn btn-primari" href="../sollicitar-servei.html?servei=energies-renovables&amp;motiu=Calculadora%20solar">Vull un estudi per a casa meva</a>
+</div>      </div>
 
       <h2>Treballs realitzats</h2>
       <ul class="galeria">
@@ -112,6 +147,10 @@
         <a class="btn btn-primari btn-bloc" href="tel:+34938910911"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>93 891 09 11</span></a>
         <a class="btn btn-contorn btn-bloc" href="../sollicitar-servei.html">Demana pressupost</a>
       </div>
+      <a class="eina-targeta eina-targeta-petita" href="../eines.html#avaries">
+        <span class="eina-icona"><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
+        <span><strong>Què et passa?</strong><br>Tria el problema i et diem què pots fer ara mateix i com d&#39;urgent és.</span>
+      </a>
       <nav class="altres-serveis" aria-label="Altres serveis">
         <h2>Altres serveis</h2>
         <ul>
@@ -165,6 +204,8 @@
         <h2 class="peu-titol">Seccions</h2>
         <ul class="peu-llista peu-links">
           <li><a href="../">Inici</a></li>
+          <li><a href="../treballs.html">Treballs</a></li>
+          <li><a href="../eines.html">Eines</a></li>
           <li><a href="../experiencia.html">Experiència</a></li>
           <li><a href="../sollicitar-servei.html">Demana pressupost</a></li>
           <li><a href="../contacte.html">Contacte</a></li>
@@ -198,6 +239,6 @@
     <button class="lb-boto lb-seg" type="button" data-lightbox-seg aria-label="Següent"><svg class="icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
   </dialog>
 
-  <script src="../js/main.js?v=855da5d7" defer></script>
+  <script src="../js/main.js?v=0457701a" defer></script>
 </body>
 </html>
