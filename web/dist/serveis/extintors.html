@@ -4,6 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script>document.documentElement.classList.add('js')</script>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('tema');
+        if (t === 'clar' || t === 'fosc') document.documentElement.dataset.tema = t;
+      } catch (e) { /* mode privat o sense emmagatzematge */ }
+    })();
+  </script>
   <title>Extintors i detecció d&#39;incendis al Penedès · Electricitat Samsó</title>
 <meta name="description" content="Venda, manteniment i recanvi d&#39;extintors i sistemes de detecció d&#39;incendis per a empreses, comunitats i particulars al Penedès.">  <link rel="canonical" href="https://electricitatsamso.com/serveis/extintors.html">
   <link rel="alternate" hreflang="ca" href="https://electricitatsamso.com/serveis/extintors.html">
@@ -19,10 +27,11 @@
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="icon" href="../img/favicon-32.png" type="image/png">
   <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
-  <link rel="stylesheet" href="../css/estil.css?v=0457701a">
+  <link rel="stylesheet" href="../css/estil.css?v=c1d7d53d">
 </head>
 <body class="pag-servei">
   <a class="saltar" href="#contingut">Salta al contingut</a>
+  <div class="progres" aria-hidden="true"><span data-progres></span></div>
 
   <header class="capcalera">
     <div class="contenidor capcalera-dins">
@@ -34,6 +43,9 @@
   <a class="idioma-opcio" href="../cas/serveis/extintors.html" hreflang="es" lang="es" title="Español"><span aria-hidden="true">ES</span><span class="sr">Español</span></a>
 </div>
 
+      <button class="tema-boto" type="button" data-tema-boto aria-label="Canvia entre el tema clar i el fosc" title="Canvia entre el tema clar i el fosc">
+        <span class="ic-lluna"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></span><span class="ic-sol"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></span>
+      </button>
       <button class="menu-boto" type="button" aria-expanded="false" aria-controls="menu" data-menu-boto>
         <span class="obre"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg></span><span class="tanca"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></span>
         <span class="sr">Menú</span>
@@ -50,6 +62,10 @@
         <div class="menu-accions">
           <a class="telefon-cap" href="tel:+34938910911"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>93 891 09 11</span></a>
           <a class="btn btn-primari btn-petit" href="../sollicitar-servei.html">Demana pressupost</a>
+          <button class="menu-tema" type="button" data-tema-boto>
+            <span class="ic-lluna"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></span><span class="ic-sol"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></span>
+            <span>Tema</span>
+          </button>
         </div>
       </nav>
     </div>
@@ -60,6 +76,7 @@
   <img class="cap-fons" src="../img/extintors/extintors2-full.webp" width="640" height="434" alt="" fetchpriority="high">
   <div class="contenidor">
     <nav class="molles" aria-label="breadcrumb"><a href="../">Inici</a> / <a href="../serveis.html">Serveis</a> / <span>Extintors</span></nav>
+    <span class="cap-servei-icona" aria-hidden="true"><svg class="icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></span>
     <h1>Extintors</h1>
     <p class="entradeta">Venda d&#39;extintors, detecció d&#39;incendis i manteniment.</p>
   </div>
@@ -178,7 +195,10 @@
     <a href="../sollicitar-servei.html" class="barra-pressupost"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/></svg><span>Pressupost</span></a>
   </div>
 
+  <button class="amunt" type="button" data-amunt aria-label="Torna a dalt" title="Torna a dalt"><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg></button>
+
   <dialog class="lightbox" data-lightbox-dialog aria-label="Amplia la imatge">
+    <p class="lb-compte" data-lightbox-compte hidden></p>
     <figure>
       <img alt="" data-lightbox-img>
       <figcaption data-lightbox-text data-foto="Foto" data-de="de"></figcaption>
@@ -188,6 +208,6 @@
     <button class="lb-boto lb-seg" type="button" data-lightbox-seg aria-label="Següent"><svg class="icon" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
   </dialog>
 
-  <script src="../js/main.js?v=0457701a" defer></script>
+  <script src="../js/main.js?v=c1d7d53d" defer></script>
 </body>
 </html>

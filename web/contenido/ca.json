@@ -67,7 +67,10 @@
     "eines_nav": "Eines",
     "filtre_tots": "Tots",
     "veure_treballs": "Veure tots els treballs",
-    "obrir_eina": "Obre l'eina"
+    "obrir_eina": "Obre l'eina",
+    "tema": "Tema",
+    "tema_canviar": "Canvia entre el tema clar i el fosc",
+    "tornar_dalt": "Torna a dalt"
   },
   "paginas": {
     "inici": {
@@ -76,6 +79,11 @@
       "hero_etiqueta": "Sant Sadurní d'Anoia · Des de 1960",
       "hero_titol": "Electricitat, aigua i climatització al Penedès",
       "hero_text": "Empresa familiar amb {anys} anys d'experiència. Treballem per a particulars, comunitats de veïns i empreses de tot el Penedès.",
+      "hero_chips": [
+        "Pressupost sense compromís",
+        "Atenció a urgències",
+        "Particulars i empreses"
+      ],
       "xifres": [
         {
           "num": "1960",
@@ -95,8 +103,10 @@
         }
       ],
       "serveis_titol": "Els nostres serveis",
+      "serveis_etiqueta": "Què fem",
       "serveis_text": "Des d'una avaria a casa fins a la instal·lació completa d'un celler o una nau industrial.",
       "perque_titol": "Per què Electricitat Samsó",
+      "perque_etiqueta": "La nostra manera de treballar",
       "perque": [
         {
           "titol": "Empresa familiar",
@@ -121,6 +131,7 @@
       "historia_autor": "Pere Samsó, fundador",
       "historia_boto": "Coneix la nostra història",
       "treballs_titol": "Alguns dels nostres treballs",
+      "treballs_etiqueta": "Projectes recents",
       "treballs_text": "Instal·lacions fetes per a cellers, empreses i particulars de la comarca.",
       "hero_prefix": "Instal·lacions de",
       "hero_rotador": [
@@ -132,8 +143,10 @@
       ],
       "hero_sufix": "al Penedès",
       "eines_titol": "Resol-ho en un minut",
+      "eines_etiqueta": "Eines en línia",
       "eines_text": "Eines gratuïtes per saber què fer davant d'una avaria o fer números abans de trucar-nos.",
-      "faq_titol": "Preguntes freqüents"
+      "faq_titol": "Preguntes freqüents",
+      "faq_etiqueta": "Informació útil"
     },
     "serveis": {
       "title": "Serveis · Electricitat Samsó",

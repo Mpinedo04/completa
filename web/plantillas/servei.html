@@ -9,6 +9,12 @@
   <img class="cap-fons" src="{{ asset(h.src) }}" width="{{ h.w }}" height="{{ h.h }}" alt="" fetchpriority="high">
   <div class="contenidor">
     <nav class="molles" aria-label="breadcrumb"><a href="{{ url('inici') }}">{{ ui.inici }}</a> / <a href="{{ url('serveis') }}">{{ ui.serveis }}</a> / <span>{{ info.nom }}</span></nav>
+    {% set icones = {
+      'electricitat': 'zap', 'aigua': 'drop', 'liquids-gasos': 'flame',
+      'refrigeracio-climatitzacio': 'snow', 'energies-renovables': 'sun',
+      'illuminacio': 'bulb', 'extintors': 'alert', 'manteniment': 'wrench'
+    } %}
+    <span class="cap-servei-icona" aria-hidden="true">{{ icon(icones.get(servei, 'zap'), 26) }}</span>
     <h1>{{ info.nom }}</h1>
     <p class="entradeta">{{ info.curt }}</p>
   </div>

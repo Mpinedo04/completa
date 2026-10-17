@@ -1,9 +1,22 @@
 {% from 'macros.html' import icon %}
+{% set icones = {
+  'electricitat': 'zap',
+  'aigua': 'drop',
+  'liquids-gasos': 'flame',
+  'refrigeracio-climatitzacio': 'snow',
+  'energies-renovables': 'sun',
+  'illuminacio': 'bulb',
+  'extintors': 'alert',
+  'manteniment': 'wrench'
+} %}
 <ul class="targetes">
   {% for s in comun.serveis if s.slug != servei %}
   {% set st = t.serveis[s.slug] %}{% set im = img(s.portada, 'card', s.foco if s.foco is defined else none) %}
   <li class="targeta">
-    <img src="{{ asset(im.src) }}" width="{{ im.w }}" height="{{ im.h }}" alt="" loading="lazy">
+    <div class="targeta-imatge">
+      <img src="{{ asset(im.src) }}" width="{{ im.w }}" height="{{ im.h }}" alt="" loading="lazy">
+      <span class="targeta-icona" aria-hidden="true">{{ icon(icones.get(s.slug, 'zap'), 22) }}</span>
+    </div>
     <div class="targeta-cos">
       <h3><a href="{{ url('serveis/' ~ s.slug ~ '.html') }}">{{ st.nom }}</a></h3>
       <p>{{ st.curt }}</p>

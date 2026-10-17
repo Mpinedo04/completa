@@ -39,6 +39,12 @@
       </span>
     </h1>
     <p class="hero-text">{{ p.hero_text }}</p>
+    <ul class="hero-xips">
+      {% set icones_xips = ['file', 'zap', 'users'] %}
+      {% for x in p.hero_chips %}
+      <li>{{ icon(icones_xips[loop.index0], 17) }}<span>{{ x }}</span></li>
+      {% endfor %}
+    </ul>
     <div class="botons">
       <a class="btn btn-primari btn-gran" href="tel:{{ comun.telefon_link }}">{{ icon('phone', 20) }}<span>{{ ui.trucar_llarg }} · {{ comun.telefon }}</span></a>
       <a class="btn btn-contorn-blanc btn-gran" href="#avaries">{{ icon('wrench', 20) }}<span>{{ t.eines.avaries.titol }}</span></a>
@@ -49,8 +55,9 @@
 <section class="xifres" aria-label="{{ comun.empresa }}">
   <div class="contenidor">
     <ul class="xifres-llista">
+      {% set xicones = ['zap', 'clock', 'wrench', 'users'] %}
       {% for x in p.xifres %}
-      <li><strong data-compta="{{ x.num }}">{{ x.num }}</strong><span>{{ x.text }}</span></li>
+      <li><span class="xifra-icona" aria-hidden="true">{{ icon(xicones[loop.index0], 18) }}</span><strong data-compta="{{ x.num }}">{{ x.num }}</strong><span>{{ x.text }}</span></li>
       {% endfor %}
     </ul>
   </div>
@@ -59,16 +66,19 @@
 <section class="seccio">
   <div class="contenidor">
     <div class="seccio-cap">
+      <p class="etiqueta etiqueta-vermella">{{ p.serveis_etiqueta }}</p>
       <h2>{{ p.serveis_titol }}</h2>
       <p>{{ p.serveis_text }}</p>
     </div>
     {% include 'targetes-serveis.html' %}
+    <p class="centrat mes-targetes"><a class="btn btn-contorn" href="{{ url('serveis') }}">{{ ui.tots_serveis }} {{ icon('arrow', 18) }}</a></p>
   </div>
 </section>
 
 <section class="seccio seccio-eines">
   <div class="contenidor">
     <div class="seccio-cap">
+      <p class="etiqueta etiqueta-vermella">{{ p.eines_etiqueta }}</p>
       <h2>{{ p.eines_titol }}</h2>
       <p>{{ p.eines_text }}</p>
     </div>
@@ -95,6 +105,7 @@
 <section class="seccio seccio-crema">
   <div class="contenidor">
     <div class="seccio-cap">
+      <p class="etiqueta etiqueta-vermella">{{ p.perque_etiqueta }}</p>
       <h2>{{ p.perque_titol }}</h2>
     </div>
     <ul class="avantatges">
@@ -132,6 +143,7 @@
 <section class="seccio seccio-fosca">
   <div class="contenidor">
     <div class="seccio-cap">
+      <p class="etiqueta etiqueta-vermella">{{ p.treballs_etiqueta }}</p>
       <h2>{{ p.treballs_titol }}</h2>
       <p>{{ p.treballs_text }}</p>
     </div>
@@ -152,13 +164,14 @@
 <section class="seccio">
   <div class="contenidor faq-graella">
     <div class="seccio-cap">
+      <p class="etiqueta etiqueta-vermella">{{ p.faq_etiqueta }}</p>
       <h2>{{ p.faq_titol }}</h2>
     </div>
     <div class="faq">
       {% for q in t.faq %}
       <details{% if loop.first %} open{% endif %}>
         <summary>{{ q.p }}<span class="faq-icona" aria-hidden="true">{{ icon('plus', 20) }}</span></summary>
-        <p>{{ q.r }}</p>
+        <div class="faq-resposta"><p>{{ q.r }}</p></div>
       </details>
       {% endfor %}
     </div>

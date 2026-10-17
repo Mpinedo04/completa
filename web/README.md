@@ -34,6 +34,7 @@ En local el formulario muestra "modo demostración", porque no hay PHP.
 | Textos del asistente, calculadoras y preguntas frecuentes | `eines` y `faq` en `contenido/ca.json` / `es.json` |
 | Envío del formulario (destinatario, remitente) | `static/php/enviar.php` |
 | Redirecciones, caché, HTTPS | `static/htaccess.txt` (se publica como `.htaccess`) |
+| Tema claro/oscuro (botón de la cabecera; por defecto sigue al sistema) | `plantillas/base.html` y `static/css/estil.css` (`:root[data-tema="fosc"]`) |
 
 - **Horario:** `"horari": {"ca": "De dilluns a divendres, de 8 a 13 i de 15 a 19 h", "es": "..."}`. Aparece automáticamente en Contacto y en el pie.
 - **WhatsApp:** `"whatsapp": "34600000000"`. Añade un botón en la barra del móvil.

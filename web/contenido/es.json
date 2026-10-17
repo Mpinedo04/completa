@@ -67,7 +67,10 @@
     "eines_nav": "Herramientas",
     "filtre_tots": "Todos",
     "veure_treballs": "Ver todos los trabajos",
-    "obrir_eina": "Abrir la herramienta"
+    "obrir_eina": "Abrir la herramienta",
+    "tema": "Tema",
+    "tema_canviar": "Cambiar entre tema claro y oscuro",
+    "tornar_dalt": "Volver arriba"
   },
   "paginas": {
     "inici": {
@@ -76,6 +79,11 @@
       "hero_etiqueta": "Sant Sadurní d'Anoia · Desde 1960",
       "hero_titol": "Electricidad, agua y climatización en el Penedès",
       "hero_text": "Empresa familiar con {anys} años de experiencia. Trabajamos para particulares, comunidades de vecinos y empresas de todo el Penedès.",
+      "hero_chips": [
+        "Presupuesto sin compromiso",
+        "Atención a urgencias",
+        "Particulares y empresas"
+      ],
       "xifres": [
         {
           "num": "1960",
@@ -95,8 +103,10 @@
         }
       ],
       "serveis_titol": "Nuestros servicios",
+      "serveis_etiqueta": "Qué hacemos",
       "serveis_text": "Desde una avería en casa hasta la instalación completa de una bodega o una nave industrial.",
       "perque_titol": "Por qué Electricitat Samsó",
+      "perque_etiqueta": "Nuestra forma de trabajar",
       "perque": [
         {
           "titol": "Empresa familiar",
@@ -121,6 +131,7 @@
       "historia_autor": "Pere Samsó, fundador",
       "historia_boto": "Conoce nuestra historia",
       "treballs_titol": "Algunos de nuestros trabajos",
+      "treballs_etiqueta": "Proyectos recientes",
       "treballs_text": "Instalaciones realizadas para bodegas, empresas y particulares de la comarca.",
       "hero_prefix": "Instalaciones de",
       "hero_rotador": [
@@ -132,8 +143,10 @@
       ],
       "hero_sufix": "en el Penedès",
       "eines_titol": "Resuélvelo en un minuto",
+      "eines_etiqueta": "Herramientas en línea",
       "eines_text": "Herramientas gratuitas para saber qué hacer ante una avería o hacer números antes de llamarnos.",
-      "faq_titol": "Preguntas frecuentes"
+      "faq_titol": "Preguntas frecuentes",
+      "faq_etiqueta": "Información útil"
     },
     "serveis": {
       "title": "Servicios · Electricitat Samsó",

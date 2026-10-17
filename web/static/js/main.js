@@ -1,4 +1,4 @@
-/* Electricitat Samsó — menú, galeria, formularis, eines (avaries, solar, potència) i animacions. Sense dependències. */
+/* Electricitat Samsó — menú, galeria, formularis, eines (avaries, solar, potència), tema i animacions. Sense dependències. */
 (function () {
   'use strict';
 
@@ -7,6 +7,31 @@
   function num(n, dec) {
     return new Intl.NumberFormat(idioma, { minimumFractionDigits: dec || 0, maximumFractionDigits: dec || 0 }).format(n);
   }
+
+  // ---------- tema clar / fosc ----------
+  var arrel = document.documentElement;
+  var metaTema = document.querySelector('meta[name="theme-color"]');
+  var foscSistema = window.matchMedia('(prefers-color-scheme: dark)');
+  var BOTONS_TEMA = document.querySelectorAll('[data-tema-boto]');
+  function temaEfectiu() {
+    return arrel.dataset.tema || (foscSistema.matches ? 'fosc' : 'clar');
+  }
+  function pintaTema() {
+    var fosc = temaEfectiu() === 'fosc';
+    if (metaTema) metaTema.setAttribute('content', fosc ? '#151211' : '#ffffff');
+    BOTONS_TEMA.forEach(function (b) { b.setAttribute('aria-pressed', String(fosc)); });
+  }
+  BOTONS_TEMA.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var nou = temaEfectiu() === 'fosc' ? 'clar' : 'fosc';
+      arrel.dataset.tema = nou;
+      try { localStorage.setItem('tema', nou); } catch (e) { /* sense emmagatzematge */ }
+      pintaTema();
+    });
+  });
+  // si l'usuari no ha triat res, se segueix la preferència del sistema en directe
+  foscSistema.addEventListener('change', function () { if (!arrel.dataset.tema) pintaTema(); });
+  pintaTema();
 
   // ---------- menú mòbil ----------
   var boto = document.querySelector('[data-menu-boto]');
@@ -33,6 +58,7 @@
   if (dialeg && typeof dialeg.showModal === 'function') {
     var imatge = dialeg.querySelector('[data-lightbox-img]');
     var text = dialeg.querySelector('[data-lightbox-text]');
+    var compte = dialeg.querySelector('[data-lightbox-compte]');
     var grup = [], actual = 0;
 
     function mostra(i) {
@@ -42,6 +68,7 @@
       imatge.alt = mini ? mini.alt : '';
       if (a.dataset.w) { imatge.width = a.dataset.w; imatge.height = a.dataset.h; }
       text.textContent = text.dataset.foto + ' ' + (actual + 1) + ' ' + text.dataset.de + ' ' + grup.length;
+      if (compte) { compte.hidden = grup.length < 2; compte.textContent = (actual + 1) + ' / ' + grup.length; }
       dialeg.querySelector('[data-lightbox-ant]').hidden = grup.length < 2;
       dialeg.querySelector('[data-lightbox-seg]').hidden = grup.length < 2;
     }
@@ -74,16 +101,28 @@
     dialeg.addEventListener('close', function () { imatge.removeAttribute('src'); });
   }
 
-  // ---------- filtres de la pàgina de treballs ----------
+  // ---------- filtres de la pàgina de treballs (amb transició suau) ----------
   var filtres = document.querySelector('[data-filtres]');
   var galeriaF = document.querySelector('[data-galeria-filtrable]');
+  var temporitzadorFiltre;
   if (filtres && galeriaF) {
     filtres.addEventListener('click', function (e) {
       var b = e.target.closest('[data-filtre]');
       if (!b) return;
       filtres.querySelectorAll('[data-filtre]').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
       var f = b.dataset.filtre;
-      galeriaF.querySelectorAll('li').forEach(function (li) { li.hidden = f !== 'tots' && li.dataset.cat !== f; });
+      function aplica() {
+        galeriaF.querySelectorAll('li').forEach(function (li) { li.hidden = f !== 'tots' && li.dataset.cat !== f; });
+      }
+      if (reduit) return aplica();
+      galeriaF.classList.add('animant');
+      clearTimeout(temporitzadorFiltre);
+      temporitzadorFiltre = setTimeout(function () {
+        aplica();
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () { galeriaF.classList.remove('animant'); });
+        });
+      }, 240);
     });
   }
 
@@ -245,6 +284,78 @@
     caselles.forEach(function (c) { c.addEventListener('change', calcula); });
     calcula();
   });
+
+  // ---------- capçalera, barra de progrés, tornar a dalt i parallax del hero ----------
+  var capcalera = document.querySelector('.capcalera');
+  var barraProgres = document.querySelector('[data-progres]');
+  var botoAmunt = document.querySelector('[data-amunt]');
+  var heroFons = document.querySelector('.hero-fons');
+  var parallaxActiu = heroFons && !reduit && window.matchMedia('(min-width: 960px)').matches;
+  var pendentPintar = false;
+  function pintaScroll() {
+    pendentPintar = false;
+    var y = window.scrollY || document.documentElement.scrollTop;
+    if (capcalera) capcalera.classList.toggle('scrollada', y > 8);
+    if (barraProgres) {
+      var total = document.documentElement.scrollHeight - window.innerHeight;
+      var p = total > 0 ? Math.min(1, y / total) : 0;
+      barraProgres.style.transform = 'scaleX(' + p + ')';
+    }
+    if (botoAmunt) botoAmunt.classList.toggle('vist', y > 560);
+    if (parallaxActiu) heroFons.style.transform = 'translate3d(0,' + Math.min(y * 0.16, 140) + 'px,0) scale(1.14)';
+  }
+  function demanaPintar() {
+    if (pendentPintar) return;
+    pendentPintar = true;
+    requestAnimationFrame(pintaScroll);
+  }
+  window.addEventListener('scroll', demanaPintar, { passive: true });
+  window.addEventListener('resize', demanaPintar, { passive: true });
+  pintaScroll();
+  if (botoAmunt) {
+    botoAmunt.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: reduit ? 'auto' : 'smooth' });
+    });
+  }
+
+  // ---------- FAQ: obertura i tancament suaus ----------
+  if (!reduit) {
+    document.querySelectorAll('.faq details').forEach(function (d) {
+      var s = d.querySelector('summary');
+      var p = d.querySelector('.faq-resposta') || d.querySelector('p');
+      if (!s || !p) return;
+      s.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (d.open) {
+          p.style.height = p.offsetHeight + 'px';
+          requestAnimationFrame(function () {
+            p.style.transition = 'height .28s ease, opacity .28s ease';
+            p.style.height = '0';
+            p.style.opacity = '0';
+          });
+          p.addEventListener('transitionend', function fi() {
+            d.open = false;
+            p.style = '';
+            p.removeEventListener('transitionend', fi);
+          });
+        } else {
+          d.open = true;
+          p.style.height = '0';
+          p.style.opacity = '0';
+          p.style.transition = 'height .32s ease, opacity .32s ease';
+          var alt = p.scrollHeight;
+          requestAnimationFrame(function () {
+            p.style.height = alt + 'px';
+            p.style.opacity = '1';
+          });
+          p.addEventListener('transitionend', function fi() {
+            p.style = '';
+            p.removeEventListener('transitionend', fi);
+          });
+        }
+      });
+    });
+  }
 
   // ---------- titular amb paraules que roten ----------
   var rotador = document.querySelector('[data-rotador]');
